@@ -15,6 +15,10 @@ npm-debug.log
 .gitignore
 .travis.yml
 tsconfig.json
+tslint.json
+karma.conf.js
+CONTRIBUTING.md
+AUTHORS.md
 /test
 /doc
 /example
