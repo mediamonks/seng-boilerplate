@@ -1,0 +1,21 @@
+# .gitignore
+.idea
+node_modules
+typings
+.tscache
+.sass-cache
+.DS_Store
+npm-debug.log
+/coverage
+/test/*.js
+!/test/index.js
+
+# .npmignore
+.editorconfig
+.gitignore
+.travis.yml
+tsconfig.json
+/test
+/doc
+/example
+/src

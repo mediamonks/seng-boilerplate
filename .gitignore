@@ -1,0 +1,11 @@
+.idea
+node_modules
+typings
+.tscache
+.sass-cache
+.DS_Store
+npm-debug.log
+/dist
+/coverage
+/test/*.js
+!/test/index.js

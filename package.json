@@ -1,0 +1,48 @@
+{
+  "name": "seng-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate and example project for all Seng projects",
+  "main": "dist/index.js",
+  "typings": "dist/index",
+  "scripts": {
+    "postinstall": "npm run typings",
+    "prepublish": "npm run build",
+    "typings": "typings install",
+    "build": "rm -rf dist && tsc -p ./",
+    "test": "tsc -p ./test && karma start karma.conf.js --single-run --browsers PhantomJS",
+    "doc": "typedoc --out doc/typedoc/ src/",
+    "lint": "tslint -c tslint.json src/**/*.ts"
+  },
+  "author": "",
+  "homepage": "https://www.mediamonks.com/",
+  "license": "MIT",
+  "keywords": [
+    "seng",
+    "mediamonks",
+    "boilerplate"
+  ],
+  "bugs": {
+    "url": "https://github.com/MediaMonks/seng-boilerplate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MediaMonks/seng-boilerplate.git"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.6",
+    "istanbul-instrumenter-loader": "^0.1.3",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-webpack": "^1.7.0",
+    "phantomjs-prebuilt": "^2.1.3",
+    "tslint": "^3.3.0",
+    "typedoc": "ThaNarie/typedoc",
+    "typescript": "^1.8.0",
+    "webpack": "^1.12.12"
+  },
+  "dependencies": {
+  }
+}
