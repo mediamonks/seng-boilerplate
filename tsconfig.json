@@ -12,7 +12,7 @@
     "outDir": "./dist"
   },
   "files": [
-    "./typings/browser.d.ts",
+    "./typings/index.d.ts",
     "./src/index.ts"
   ]
 }
