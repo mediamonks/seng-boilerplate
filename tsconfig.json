@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
     "target": "es5",
+    "module": "commonjs",
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": false,
     "experimentalDecorators": true,
-    "outDir": "./dist"
+    "outDir": "./"
   },
   "files": [
     "./typings/index.d.ts",

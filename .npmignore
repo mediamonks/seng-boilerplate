@@ -19,7 +19,8 @@ tslint.json
 karma.conf.js
 CONTRIBUTING.md
 AUTHORS.md
-/test
+/dist
 /doc
 /example
 /src
+/test
