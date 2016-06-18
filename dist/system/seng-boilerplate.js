@@ -1,5 +1,6 @@
-System.register("lib/Example", [], function(exports_1) {
+System.register("lib/Example", [], function(exports_1, context_1) {
     "use strict";
+    var __moduleName = context_1 && context_1.id;
     var Example;
     return {
         setters:[],
@@ -33,16 +34,18 @@ System.register("lib/Example", [], function(exports_1) {
         }
     }
 });
-System.register("lib/IExample", [], function(exports_2) {
+System.register("lib/IExample", [], function(exports_2, context_2) {
     "use strict";
+    var __moduleName = context_2 && context_2.id;
     return {
         setters:[],
         execute: function() {
         }
     }
 });
-System.register("index", ["lib/Example"], function(exports_3) {
+System.register("index", ["lib/Example"], function(exports_3, context_3) {
     "use strict";
+    var __moduleName = context_3 && context_3.id;
     var Example_1;
     return {
         setters:[

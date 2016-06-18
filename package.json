@@ -9,7 +9,7 @@
     "prepublish": "npm-run-all validate build",
     "typings": "typings install",
     "test": "npm run typescript-test && karma start config/karma.conf.js --single-run --browsers PhantomJS",
-    "validate": "npm-run-all -p validate-webpack lint test doc -s check-coverage",
+    "validate": "npm-run-all -p validate-webpack lint test -s check-coverage",
     "check-coverage": "istanbul check-coverage --statement 1 --branches 1 --functions 1 --lines 1",
     "validate-webpack": "webpack-validator config/webpack.config.js",
     "lint": "tslint -c tslint.json src/**/*.ts",
@@ -26,8 +26,7 @@
     "build": "npm-run-all clean compile"
   },
   "pre-commit": [
-    "validate",
-    "build"
+    "validate"
   ],
   "author": "Arjan van Wijk",
   "homepage": "https://www.mediamonks.com/",
