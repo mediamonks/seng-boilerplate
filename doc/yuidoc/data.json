@@ -1,0 +1,61 @@
+{
+    "project": {},
+    "files": {
+        "src/lib/Example.js": {
+            "name": "src/lib/Example.js",
+            "modules": {},
+            "classes": {
+                "example.Example": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "example": 1
+            }
+        }
+    },
+    "modules": {},
+    "classes": {
+        "example.Example": {
+            "name": "example.Example",
+            "shortname": "example.Example",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "example",
+            "file": "src/lib/Example.js",
+            "line": 2,
+            "is_constructor": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/lib/Example.js",
+            "line": 10,
+            "description": "Returns a value!",
+            "itemtype": "method",
+            "name": "foo",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "The input string",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "example.Example",
+            "namespace": "example"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/lib/Example.js:10"
+        }
+    ]
+}
