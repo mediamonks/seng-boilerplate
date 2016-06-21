@@ -12,7 +12,7 @@ export default class Example
 	 * @param {string} str The input string
 	 * @returns {string}
      */
-	public foo(str:string):string
+	public foo(str?:string):string
 	{
 		if (typeof str == 'undefined')
 		{

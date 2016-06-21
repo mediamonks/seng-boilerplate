@@ -10,7 +10,7 @@ interface IExample
 	 * @param {string} str The input string
 	 * @returns {string}
 	 */
-	foo(str:string):string;
+	foo(str?:string):string;
 }
 
 export default IExample;
