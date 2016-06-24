@@ -8,7 +8,8 @@
     "preserveConstEnums": true,
     "sourceMap": false,
     "experimentalDecorators": true,
-    "outDir": "./"
+    "outDir": "./",
+    "moduleResolution": "node"
   },
   "files": [
     "./typings/index.d.ts",
