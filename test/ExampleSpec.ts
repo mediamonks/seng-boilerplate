@@ -15,4 +15,9 @@ describe('Example', () =>
 	{
 		expect(example.foo(mockExample)).toBe('foobar');
 	});
+
+	it('should return the default environment when none has been supplied', () =>
+	{
+		expect(example.foo()).toBe('baz');
+	});
 });

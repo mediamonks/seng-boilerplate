@@ -65,20 +65,29 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p><a href="https://travis-ci.org/MediaMonks/seng-config"><img src="https://travis-ci.org/MediaMonks/seng-config.svg?branch=master" alt="Build Status"></a>
-					<a href="https://codeclimate.com/github/MediaMonks/seng-config"><img src="https://codeclimate.com/github/MediaMonks/seng-config/badges/gpa.svg" alt="Code Climate"></a>
-					<a href="https://coveralls.io/github/MediaMonks/seng-config?branch=master"><img src="https://coveralls.io/repos/github/MediaMonks/seng-config/badge.svg?branch=master" alt="Coverage Status"></a>
-					<a href="https://www.npmjs.com/package/seng-config"><img src="https://badge.fury.io/js/seng-config.svg" alt="npm version"></a>
-				<a href="https://www.npmjs.com/package/seng-config"><img src="https://img.shields.io/npm/dm/seng-config.svg" alt="Downloads"></a></p>
+				<p><a href="https://travis-ci.org/MediaMonks/seng-boilerplate"><img src="https://travis-ci.org/mediamonks/seng-boilerplate.svg?branch=master" alt="Build Status"></a>
+					<a href="https://codeclimate.com/github/MediaMonks/seng-boilerplate"><img src="https://codeclimate.com/github/MediaMonks/seng-boilerplate/badges/gpa.svg" alt="Code Climate"></a>
+					<a href="https://coveralls.io/github/MediaMonks/seng-boilerplate?branch=master"><img src="https://coveralls.io/repos/github/MediaMonks/seng-boilerplate/badge.svg?branch=master" alt="Coverage Status"></a>
+					<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://badge.fury.io/js/seng-boilerplate.svg" alt="npm version"></a>
+				<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://img.shields.io/npm/dm/seng-boilerplate.svg" alt="Downloads"></a></p>
 				<h1 id="projectname">ProjectName</h1>
 				<p>ProjectName Description</p>
 				<h2 id="installation">Installation</h2>
 				<pre><code>npm <span class="hljs-selector-tag">i</span> -S seng-boilerplate
-</code></pre><h2 id="usage">Usage</h2>
+</code></pre><p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
+				<ul>
+					<li><strong>umd</strong> (bundled with webpack)</li>
+					<li><strong>amd</strong> (bundled with webpack)</li>
+					<li><strong>commonjs2</strong> (bundled with webpack, but why don&#39;t you use npm?)</li>
+					<li><strong>browser</strong> (bundled with webpack, available as <code>window.SengBoilerplate</code>)</li>
+					<li><strong>system</strong></li>
+					<li><strong>es6</strong></li>
+				</ul>
+				<h2 id="usage">Usage</h2>
 				<pre><code><span class="hljs-keyword">import</span> projectName <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-boilerplate'</span>;
 // <span class="hljs-keyword">import</span> projectName <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-boilerplate/lib/classname'</span>;
 
-// do something <span class="hljs-keyword">with</span> projectName
+// <span class="hljs-keyword">do</span> something with projectName
 </code></pre><h2 id="documentation">Documentation</h2>
 				<p>View the <a href="https://rawgit.com/MediaMonks/seng-boilerplate/master/doc/typedoc/index.html">generated documentation</a>.</p>
 				<h2 id="building">Building</h2>
@@ -86,17 +95,22 @@
 				and <a href="http://nodejs.org/">Node.js</a> installed.</p>
 				<p>Clone a copy of the repo:</p>
 				<pre><code>git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/MediaMonks/seng-boilerplate.git
-</code></pre><p>Change to the TypeScript directory:</p>
+</code></pre><p>Change to the seng-boilerplate directory:</p>
 				<pre><code><span class="hljs-built_in">cd</span> seng-boilerplate
 </code></pre><p>Install dev dependencies:</p>
 				<pre><code>npm <span class="hljs-keyword">install</span>
-</code></pre><p>Use one of the following scripts:</p>
-				<pre><code><span class="hljs-built_in">npm</span> run build       <span class="hljs-comment"># build this project</span>
-<span class="hljs-built_in">npm</span> test            <span class="hljs-comment"># run the tests</span>
-<span class="hljs-built_in">npm</span> run typings        <span class="hljs-comment"># install .d.ts dependencies</span>
-<span class="hljs-built_in">npm</span> run lint        <span class="hljs-comment"># run tslint on this project</span>
-<span class="hljs-built_in">npm</span> run doc            <span class="hljs-comment"># generate typedoc documentation</span>
-</code></pre><h2 id="contribute">Contribute</h2>
+</code></pre><p>Use one of the following main scripts:</p>
+				<pre><code><span class="hljs-built_in">npm</span> run build           <span class="hljs-comment"># build this project (done on install)</span>
+<span class="hljs-built_in">npm</span> run typings            <span class="hljs-comment"># install .d.ts dependencies (done on install)</span>
+<span class="hljs-built_in">npm</span> test                <span class="hljs-comment"># run the tests</span>
+<span class="hljs-built_in">npm</span> validate            <span class="hljs-comment"># runs validation scripts, including test, lint and doc</span>
+<span class="hljs-built_in">npm</span> run lint            <span class="hljs-comment"># run tslint on this project</span>
+<span class="hljs-built_in">npm</span> run doc                <span class="hljs-comment"># generate typedoc and yuidoc documentation</span>
+<span class="hljs-built_in">npm</span> run typescript-<span class="hljs-built_in">npm</span>    <span class="hljs-comment"># just compile the typescript output used in the npm module</span>
+</code></pre><p>When installing this module, it adds a pre-commit hook, that runs the <code>validate</code>
+					and <code>build</code> scripts before committing, so you can be sure that everything
+				checks out and all files that should be committed are generated.</p>
+				<h2 id="contribute">Contribute</h2>
 				<p>View <a href="./CONTRIBUTING.md">CONTRIBUTING.md</a></p>
 				<h2 id="changelog">Changelog</h2>
 				<p>View <a href="./CHANGELOG.md">CHANGELOG.md</a></p>
@@ -109,11 +123,19 @@
 				<h3 id="folders">Folders</h3>
 				<p>This boilerplate contains the following folders:</p>
 				<ul>
-					<li><strong>/dist</strong> - Contains the compiled code, is published to npm.</li>
+					<li><strong>/config</strong> - Contains the config files for karma and webpack</li>
+					<li><strong>/coverage</strong> - Contains the generated test code coverage, is sent to Code
+					Climage and Coveral.io.</li>
+					<li><strong>/dist</strong> - Contains the compiled code in different forms for manual usage.</li>
 					<li><strong>/doc</strong> - Can contain additional documentation.</li>
-					<li><strong>/docs/typedoc/</strong> - Contains the generated documentation by typedoc.</li>
+					<li><strong>/docs/typedoc/</strong> - Contains the generated documentation by typedoc. (Can be
+					removed for JS-only project)</li>
+					<li><strong>/docs/yuidoc/</strong> - Contains the generated documentation by yuidoc. (Can be
+					removed for TS-only project)</li>
 					<li><strong>/example</strong> - Can contain additional examples on how to use this module.</li>
+					<li><strong>/lib</strong> - Contains the built code from <code>src/lib</code>, will be published to npm.</li>
 					<li><strong>/node_modules</strong> - Contains the node modules generated by running <code>npm i</code>.</li>
+					<li><strong>/script</strong> - Contains scripts being called from npm scripts.</li>
 					<li><strong>/src</strong> - Contains the source code.</li>
 					<li><strong>/test</strong> - Contains the tests.</li>
 					<li><strong>/typings</strong> - Contains the .d.ts files generated by running <code>typings i</code>.</li>
@@ -123,13 +145,20 @@
 				<h3 id="files">Files</h3>
 				<p>This boilerplate contains the following files:</p>
 				<ul>
+					<li><strong>/config/karma.conf.js</strong> - Configuration for Karma test runner.</li>
+					<li><strong>/config/webpack.conf.js</strong> - Configuration for Webpack builds.</li>
+					<li><strong>/script/webpack.js</strong> - Creates all the different webpack dist builds.</li>
+					<li><strong>.codeclimate.yml</strong> - The Code Climate configuration for this project.</li>
 					<li><strong>.editorconfig</strong> - Defines general formatting rules.</li>
 					<li><strong>.gitignore</strong> - These files should not end up in git.</li>
 					<li><strong>.npmignore</strong> - These files should not end up in npm.</li>
 					<li><strong>.travis.yml</strong> - Configuration for Travis CI.</li>
 					<li><strong>AUTHORS.md</strong> - Contains a list of all the authors that worked on this module.</li>
 					<li><strong>CONTRIBUTING.md</strong> - Contains information on how to contribute on this project.</li>
-					<li><strong>karma.conf.js</strong> - Configuration for Karma test runner.</li>
+					<li><strong>index.d.ts</strong> - The built Typescript definitions, referenced in the package.json.
+					Will be published to npm.</li>
+					<li><strong>index.d.ts</strong> - The built Typescript index, referenced in the package.json.
+					Will be published to npm.</li>
 					<li><strong>LICENSE</strong> - Our license file.</li>
 					<li><strong>package.json</strong> - To list the npm package information, all the dependencies,
 					and contains all the scripts that can be run.</li>
@@ -153,6 +182,8 @@
 				<p>Todo: describe Code Climate configuration and usage.</p>
 				<h3 id="coverall">Coverall</h3>
 				<p>Todo: describe Coverall configuration and usage.</p>
+				<h3 id="npm">NPM</h3>
+				<p>Todo: describe NPM configuration and usage.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

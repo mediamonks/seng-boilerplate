@@ -5,7 +5,7 @@ module.exports = function (config)
 	config.set({
 
 		// base path that will be used to resolve all patterns (eg. files, exclude)
-		basePath: '',
+		basePath: '../',
 
 
 		// frameworks to use
@@ -53,8 +53,8 @@ module.exports = function (config)
 			dir: 'coverage',
 			reporters: [
 				// reporters not supporting the `file` property
-				{ type: 'html', subdir: 'report-html' },
-				{ type: 'lcov', subdir: 'report-lcov' },
+				{ type: 'json', dir: 'coverage', subdir: '.' },
+				{ type: 'lcov', dir: 'coverage', subdir: '.' },
 
 				{ type: 'text' }
 			]

@@ -1,3 +1,4 @@
+# copy to .npmignore
 .idea
 node_modules
 typings
@@ -5,7 +6,11 @@ typings
 .sass-cache
 .DS_Store
 npm-debug.log
-/dist
 /coverage
 /test/*.js
 !/test/index.js
+
+# only ignore in git
+/lib
+/index.js
+/index.d.ts
