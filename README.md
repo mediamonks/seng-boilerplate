@@ -11,7 +11,7 @@ ProjectName Description
 
 ## Installation
 
-```
+```sh
 npm i -S seng-boilerplate
 ```
 
@@ -26,7 +26,7 @@ Or grab one of the following files from the `/dist/` folder for manual use:
 
 ## Usage
 
-```
+```ts
 import projectName from 'seng-boilerplate';
 // import projectName from 'seng-boilerplate/lib/classname';
 
@@ -45,22 +45,22 @@ In order to build seng-boilerplate, ensure that you have [Git](http://git-scm.co
 and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
-```
+```sh
 git clone https://github.com/MediaMonks/seng-boilerplate.git
 ```
 
 Change to the seng-boilerplate directory:
-```
+```sh
 cd seng-boilerplate
 ```
 
 Install dev dependencies:
-```
+```sh
 npm install
 ```
 
 Use one of the following main scripts:
-```
+```sh
 npm run build   		# build this project (done on install)
 npm run typings			# install .d.ts dependencies (done on install)
 npm test    			# run the tests
