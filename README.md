@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/mediamonks/seng-boilerplate.svg?branch=master)](https://travis-ci.org/MediaMonks/seng-boilerplate)
-[![Code Climate](https://codeclimate.com/github/MediaMonks/seng-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/MediaMonks/seng-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/MediaMonks/seng-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/MediaMonks/seng-boilerplate?branch=master)
-[![npm version](https://badge.fury.io/js/seng-boilerplate.svg)](https://www.npmjs.com/package/seng-boilerplate)
-[![Downloads](https://img.shields.io/npm/dm/seng-boilerplate.svg)](https://www.npmjs.com/package/seng-boilerplate)
+[![Travis](https://img.shields.io/travis/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-boilerplate)
+[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate)
+[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master)
+[![npm](https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
+[![npm](https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 
 # ProjectName
 
@@ -11,7 +11,7 @@ ProjectName Description
 
 ## Installation
 
-```
+```sh
 npm i -S seng-boilerplate
 ```
 
@@ -26,7 +26,7 @@ Or grab one of the following files from the `/dist/` folder for manual use:
 
 ## Usage
 
-```
+```ts
 import projectName from 'seng-boilerplate';
 // import projectName from 'seng-boilerplate/lib/classname';
 
@@ -45,22 +45,22 @@ In order to build seng-boilerplate, ensure that you have [Git](http://git-scm.co
 and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
-```
+```sh
 git clone https://github.com/MediaMonks/seng-boilerplate.git
 ```
 
 Change to the seng-boilerplate directory:
-```
+```sh
 cd seng-boilerplate
 ```
 
 Install dev dependencies:
-```
+```sh
 npm install
 ```
 
 Use one of the following main scripts:
-```
+```sh
 npm run build   		# build this project (done on install)
 npm run typings			# install .d.ts dependencies (done on install)
 npm test    			# run the tests
