@@ -61,18 +61,18 @@ npm install
 
 Use one of the following main scripts:
 ```sh
-npm run build   		# build this project (done on install)
+npm run build   		# build this project
+npm run generate   		# generate all artifacts (compiles ts, webpack, docs and coverage)
 npm run typings			# install .d.ts dependencies (done on install)
-npm test    			# run the tests
-npm validate			# runs validation scripts, including test, lint and doc
+npm run test-unit    	# run the unit tests
+npm run validate		# runs validation scripts, including test, lint and coverage check
 npm run lint			# run tslint on this project
 npm run doc				# generate typedoc and yuidoc documentation
 npm run typescript-npm	# just compile the typescript output used in the npm module
 ```
 
 When installing this module, it adds a pre-commit hook, that runs the `validate`
-and `build` scripts before committing, so you can be sure that everything
-checks out and all files that should be committed are generated.
+script before committing, so you can be sure that everything checks out.
 
 ## Contribute
 
