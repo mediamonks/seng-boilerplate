@@ -1,29 +1,32 @@
 {
   "name": "seng-boilerplate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Boilerplate and example project for all Seng projects",
   "main": "index.js",
   "typings": "index",
   "scripts": {
     "postinstall": "npm run typings",
-    "prepublish": "npm-run-all validate build",
+    "prepublish": "npm run build-npm",
     "typings": "typings install",
-    "test": "npm run typescript-test && karma start config/karma.conf.js --single-run --browsers PhantomJS",
-    "validate": "npm-run-all -p validate-webpack lint test -s check-coverage",
+    "test": "npm run validate",
+    "validate": "npm-run-all -p validate-webpack lint test-unit -s check-coverage",
+    "test-unit": "npm run typescript-test && karma start config/karma.conf.js --single-run --browsers PhantomJS",
     "check-coverage": "istanbul check-coverage --statement 1 --branches 1 --functions 1 --lines 1",
     "validate-webpack": "webpack-validator config/webpack.config.js",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "clean": "rimraf dist lib index.js index.d.ts coverage",
     "compile": "npm-run-all typescript-npm typescript-test typescript-system typescript-es6 webpack-dist",
     "typescript-npm": "tsc -p ./ -d",
-    "typescript-test": "tsc -p test",
+    "typescript-test": "tsc -p ./test",
     "typescript-system": "tsc -p ./ -m system --outFile ./dist/system/seng-boilerplate.js",
     "typescript-es6": "tsc -p ./ -t es6 -m es6 --outDir ./dist/es6/",
     "webpack-dist": "node script/webpack.js",
     "doc": "npm-run-all -p typedoc yuidoc",
     "typedoc": "typedoc --out doc/typedoc/ src/",
     "yuidoc": "yuidoc -o doc/yuidoc/ -t ./node_modules/yuidoc-mediamonks-theme -H ./node_modules/yuidoc-mediamonks-theme/helpers/helpers.js src/",
-    "build": "npm-run-all clean compile"
+    "generate": "npm-run-all clean compile test-unit doc",
+    "build": "npm-run-all clean compile",
+    "build-npm": "npm-run-all clean test typescript-npm"
   },
   "pre-commit": [
     "validate"
