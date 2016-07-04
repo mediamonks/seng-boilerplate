@@ -164,7 +164,94 @@ Todo: describe TypeDoc configuration and usage.
 
 ### Travis
 
-Todo: describe Travis configuration and usage.
+This project uses [Travis](https://travis-ci.org] to build, test and
+publish its code to npm. Travis is free for public Github repositories.
+
+It runs on all commits, shows the build status for pull requests, and
+publishes to npm when a new tag/release is created.
+
+Travis only runs the `npm test` script, so have configured that script
+to run everything we want Travis to check. Besides the unit tests, we
+also run our validations and linters.
+
+The travis configuration is placed in a `.travis.yml` file, consisting
+of multiple sections.
+
+1.  Defines the `node_js` [language](https://docs.travis-ci.com/user/languages/javascript-with-nodejs),
+    and tells travis on which node versions to run the process.
+2.  Before running, it needs to install some global dependencies, and
+    when it processes some coverage results.
+3.  It can do a [npm deploy](https://docs.travis-ci.com/user/deployment/npm),
+    telling it to keep the generated artifacts and only publish when run
+    on node 4 and when a tag was committed. It also contains the email
+    address and api key of the npm user.
+4.  Code Climate has a [travis plugin](https://docs.travis-ci.com/user/code-climate/)
+    that automatically uploads the code coverage results.
+
+Because we want to keep the npm api key secret, we generate a secure
+token with the [Travis Client](https://github.com/travis-ci/travis.rb),
+a CLI written in ruby.
+
+Before we can do this, we must make sure that the repository is added
+to Travis, because Travis needs the repository owner/name info to make
+sure the encrypted values only work for that repository. 
+
+1.  First you need to [login](https://github.com/travis-ci/travis.rb#login)
+    with your travis account:
+    
+    ```sh
+    $ travis login
+    ```
+    
+    To verify that you are logged in correctly you can check:
+    
+    ```sh
+    $ travis whoami
+    ```
+    
+2.  Then make sure you are logged in to your npm account with the
+    [adduser](https://docs.npmjs.com/cli/adduser) command:
+    
+    ```sh
+    $ npm adduser
+    ```
+    
+    To verify that you are logged in correctly you can check:
+        
+    ```sh
+    $ npm whoami
+    ```
+    
+3.  Now we need to grab your auth token so we can encrypt it:
+    
+    ```sh
+    $ cat ~/.npmrc
+    
+    # outputs:
+    //registry.npmjs.org/:_authToken=<your_auth_token>
+    ```
+    
+4.  Then let's encrypt that token using the travis [encrypt](https://github.com/travis-ci/travis.rb#encrypt)
+    command:
+    
+    ```sh
+    $ travis encrypt <your_auth_token>
+    Detected repository as mediamonks/seng-boilerplate, is this correct? |yes|
+    Please add the following to your .travis.yml file:
+    
+      secure: "YcN...Zb="
+    ```
+    
+    Now copy that last line, paste it into your `.travis.yml`, and make
+    sure it looks something like this:
+    
+    ```yml
+    deploy:
+      provider: npm
+      email: "john@doe.com"
+      api_key:
+        secure: "YcN...Zb="
+    ```
 
 ### Code Climate
 
