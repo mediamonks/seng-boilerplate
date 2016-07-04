@@ -31,7 +31,7 @@
   "pre-commit": [
     "validate"
   ],
-  "author": "Arjan van Wijk",
+  "author": "Arjan van Wijk <arjan@mediamonks.com> (https://github.com/thanarie)",
   "homepage": "https://www.mediamonks.com/",
   "license": "MIT",
   "keywords": [
