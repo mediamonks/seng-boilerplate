@@ -4,9 +4,9 @@
 [![npm](https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 [![npm](https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 
-# ProjectName
+# seng-boilerplate
 
-ProjectName Description
+Add a description here...
 
 
 ## Installation
@@ -27,10 +27,10 @@ Or grab one of the following files from the `/dist/` folder for manual use:
 ## Usage
 
 ```ts
-import projectName from 'seng-boilerplate';
-// import projectName from 'seng-boilerplate/lib/classname';
+import SengBoilerplate from 'seng-boilerplate';
+// import SengBoilerplate from 'seng-boilerplate/lib/classname';
 
-// do something with projectName
+// do something with SengBoilerplate
 ```
 
 
