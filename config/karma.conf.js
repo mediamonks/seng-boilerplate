@@ -1,4 +1,14 @@
 var path = require('path');
+var webpackConfig = require('./webpack.config')();
+
+webpackConfig.module.postLoaders = [
+	// instrument only testing sources with Istanbul
+	{
+		test: /\.ts$/,
+		include: path.resolve('src/'),
+		loader: 'istanbul-instrumenter'
+	}
+];
 
 module.exports = function (config)
 {
@@ -27,20 +37,12 @@ module.exports = function (config)
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
 			'test/index.js': ['webpack'],
-			'src/*.js': ['coverage'] // only for webstorm, real coverage is injected as webpack-loader
+			'src/*.ts': ['webpack','coverage'] // only for webstorm, real coverage is injected as webpack-loader
 		},
 
 		webpack: {
-			module: {
-				preLoaders: [
-					// instrument only testing sources with Istanbul
-					{
-						test: /\.js$/,
-						include: path.resolve('src/'),
-						loader: 'istanbul-instrumenter'
-					}
-				]
-			}
+			module : webpackConfig.module,
+			resolve : webpackConfig.resolve
 		},
 
 
