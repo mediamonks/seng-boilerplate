@@ -27,7 +27,7 @@
     "build": "npm-run-all clean compile",
     "build-npm": "npm-run-all clean test typescript-npm"
   },
-  "pre-commit": [
+  "pre-push": [
     "validate"
   ],
   "author": "Arjan van Wijk <arjan@mediamonks.com> (https://github.com/thanarie)",
@@ -60,7 +60,7 @@
     "mocha": "^2.5.3",
     "npm-run-all": "^2.2.0",
     "phantomjs-prebuilt": "^2.1.3",
-    "pre-commit": "^1.1.3",
+    "pre-push": "^0.1.1",
     "rimraf": "^2.5.2",
     "ts-loader": "^0.8.0",
     "tslint": "^3.3.0",
