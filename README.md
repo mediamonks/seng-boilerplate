@@ -11,18 +11,31 @@ Add a description here...
 
 ## Installation
 
+### npm
+
 ```sh
 npm i -S seng-boilerplate
 ```
 
-Or grab one of the following files from the `/dist/` folder for manual use:
+### manual
 
-- **umd** (bundled with webpack)
-- **amd** (bundled with webpack)
-- **commonjs2** (bundled with webpack, but why don't you use npm?)
-- **browser** (bundled with webpack, available as `window.SengBoilerplate`)
-- **system**
-- **es6**
+You can clone this repository and build the distribution files for use in
+the browser yourself, and grab one of the following files from the
+`/dist/` folder:
+
+```sh
+git clone git@github.com:mediamonks/seng-boilerplate.git
+cd seng-boilerplate
+npm i
+npm run build-dist
+```
+
+- **/dist/umd** (bundled with webpack)
+- **/dist/amd** (bundled with webpack)
+- **/dist/commonjs2** (bundled with webpack, but why don't you use npm?)
+- **/dist/browser** (bundled with webpack, available as `window.SengBoilerplate`)
+- **/dist/system**
+- **/dist/es6**
 
 ## Usage
 
@@ -36,7 +49,7 @@ import SengBoilerplate from 'seng-boilerplate';
 
 ## Documentation
 
-View the [generated documentation](https://rawgit.com/MediaMonks/seng-boilerplate/master/doc/typedoc/index.html).
+View the [generated documentation](https://rawgit.com/mediamonks/seng-boilerplate/master/doc/typedoc/index.html).
 
 
 ## Building
@@ -46,7 +59,7 @@ and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
 ```sh
-git clone https://github.com/MediaMonks/seng-boilerplate.git
+git clone https://github.com/mediamonks/seng-boilerplate.git
 ```
 
 Change to the seng-boilerplate directory:

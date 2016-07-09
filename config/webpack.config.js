@@ -6,7 +6,7 @@ module.exports = function()
 {
 	return {
 		resolve: {
-			extensions: ['', '.js', '.ts']
+			extensions: ['', '.ts', '.js']
 		},
 		// entry is the "main" source file we want to include/import
 		entry: [

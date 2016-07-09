@@ -8,6 +8,7 @@ node_js:
 sudo: false
 
 before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
   - npm install -g typings
   - npm install -g codeclimate-test-reporter
 
@@ -19,7 +20,7 @@ deploy:
   provider: npm
   email: 'devmonk@mediamonks.com'
   api_key:
-    secure: 'nkyQm7A/0DDvmDlL4eFOfUmeMb1oBCoyIrCBnha1JbCtWLGEm2G5F9gDEymXGqHSckV00kmUVDDtu9W+HZfAeSq1B54raODjOzXKSKSCuW4GsdeFZcwa4MjcQ7Pl/DKzvmSopTfdEnJ1EbUKplepeeIsm/5yLQyoF1YgJNW8O3lpjk6uYc2tORYTTbF9qGisGr0sU7eljLyNT6oN9zNsDDH9KkAjynetrRe0uugPtnabolgDDZETmRnh9AslngPjp5iT8JQy7eDOFD4RsRzKcLIsp03+z+N3T7UqujrdfJ7xFtGHj7nQD9cFzD1D3dYnYxTnUVnXCyrPUbRu7F0R1ECrdHsNuIucP3cFjhFIKX8gOvXSLSfc9v/eZ/2iU7/aURSONhTmYU+pWSJpuVkmM+HWGOHdj4EwkTeuWIkKHGPdcoyhW6fTOGFnHmD999PnFpxTeRCBo58Muqb7sKAjaLoIwGl8P4ZLTPzt50n2B3iezPCDwdLZJQEDDKUc4bZGW3VYlL9l/nk9WPTsUkCRsIs3gVeE+22e5+3rArpstZGi6rT3TdjEuhg9PeHq5kvAKr6ByGOO9PqLLaVRq1N8dQ8Igbc5gc0utURVXlvyvdp00wwSiPRQNtODX7JE8RAr1IF+Pfq88sGp0WGk4mK1Rtk0ewzOlPpcSTiNyc2RXfE='
+    secure: ''
   on:
     tags: true
     node: '4'
