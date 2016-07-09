@@ -8,6 +8,7 @@ node_js:
 sudo: false
 
 before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
   - npm install -g typings
   - npm install -g codeclimate-test-reporter
 
