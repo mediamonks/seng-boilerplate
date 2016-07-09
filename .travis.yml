@@ -49,6 +49,7 @@ deploy:
     file:
       - "seng-*.zip"
       - "seng-*.tar.gz"
+    file_glob: true
     on:
       tags: true
       node: '4'
