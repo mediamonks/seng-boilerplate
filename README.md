@@ -164,7 +164,7 @@ Todo: describe TypeDoc configuration and usage.
 
 ### Travis
 
-This project uses [Travis](https://travis-ci.org] to build, test and
+This project uses [Travis](https://travis-ci.org) to build, test and
 publish its code to npm. Travis is free for public Github repositories.
 
 It runs on all commits, shows the build status for pull requests, and
