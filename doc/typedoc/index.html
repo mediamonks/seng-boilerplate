@@ -65,16 +65,17 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p><a href="https://travis-ci.org/MediaMonks/seng-boilerplate"><img src="https://travis-ci.org/mediamonks/seng-boilerplate.svg?branch=master" alt="Build Status"></a>
-					<a href="https://codeclimate.com/github/MediaMonks/seng-boilerplate"><img src="https://codeclimate.com/github/MediaMonks/seng-boilerplate/badges/gpa.svg" alt="Code Climate"></a>
-					<a href="https://coveralls.io/github/MediaMonks/seng-boilerplate?branch=master"><img src="https://coveralls.io/repos/github/MediaMonks/seng-boilerplate/badge.svg?branch=master" alt="Coverage Status"></a>
-					<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://badge.fury.io/js/seng-boilerplate.svg" alt="npm version"></a>
-				<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://img.shields.io/npm/dm/seng-boilerplate.svg" alt="Downloads"></a></p>
-				<h1 id="projectname">ProjectName</h1>
-				<p>ProjectName Description</p>
+				<p><a href="https://travis-ci.org/mediamonks/seng-boilerplate"><img src="https://img.shields.io/travis/mediamonks/seng-boilerplate.svg?maxAge=2592000" alt="Travis"></a>
+					<a href="https://codeclimate.com/github/mediamonks/seng-boilerplate"><img src="https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000" alt="Code Climate"></a>
+					<a href="https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master"><img src="https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000" alt="Coveralls"></a>
+					<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000" alt="npm"></a>
+				<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000" alt="npm"></a></p>
+				<h1 id="seng-boilerplate">seng-boilerplate</h1>
+				<p>Add a description here...</p>
 				<h2 id="installation">Installation</h2>
-				<pre><code>npm <span class="hljs-selector-tag">i</span> -S seng-boilerplate
-</code></pre><p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
+				<pre><code class="lang-sh">npm i -S seng-boilerplate
+</code></pre>
+				<p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
 				<ul>
 					<li><strong>umd</strong> (bundled with webpack)</li>
 					<li><strong>amd</strong> (bundled with webpack)</li>
@@ -84,32 +85,37 @@
 					<li><strong>es6</strong></li>
 				</ul>
 				<h2 id="usage">Usage</h2>
-				<pre><code><span class="hljs-keyword">import</span> projectName <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-boilerplate'</span>;
-// <span class="hljs-keyword">import</span> projectName <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-boilerplate/lib/classname'</span>;
+				<pre><code class="lang-ts"><span class="hljs-keyword">import</span> SengBoilerplate from <span class="hljs-string">'seng-boilerplate'</span>;
+<span class="hljs-comment">// import SengBoilerplate from 'seng-boilerplate/lib/classname';</span>
 
-// <span class="hljs-keyword">do</span> something with projectName
-</code></pre><h2 id="documentation">Documentation</h2>
-				<p>View the <a href="https://rawgit.com/MediaMonks/seng-boilerplate/master/doc/typedoc/index.html">generated documentation</a>.</p>
+<span class="hljs-comment">// do something with SengBoilerplate</span>
+</code></pre>
+				<h2 id="documentation">Documentation</h2>
+				<p>View the <a href="https://rawgit.com/mediamonks/seng-boilerplate/master/doc/typedoc/index.html">generated documentation</a>.</p>
 				<h2 id="building">Building</h2>
 				<p>In order to build seng-boilerplate, ensure that you have <a href="http://git-scm.com/downloads">Git</a>
 				and <a href="http://nodejs.org/">Node.js</a> installed.</p>
 				<p>Clone a copy of the repo:</p>
-				<pre><code>git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/MediaMonks/seng-boilerplate.git
-</code></pre><p>Change to the seng-boilerplate directory:</p>
-				<pre><code><span class="hljs-built_in">cd</span> seng-boilerplate
-</code></pre><p>Install dev dependencies:</p>
-				<pre><code>npm <span class="hljs-keyword">install</span>
-</code></pre><p>Use one of the following main scripts:</p>
-				<pre><code><span class="hljs-built_in">npm</span> run build           <span class="hljs-comment"># build this project (done on install)</span>
-<span class="hljs-built_in">npm</span> run typings            <span class="hljs-comment"># install .d.ts dependencies (done on install)</span>
-<span class="hljs-built_in">npm</span> test                <span class="hljs-comment"># run the tests</span>
-<span class="hljs-built_in">npm</span> validate            <span class="hljs-comment"># runs validation scripts, including test, lint and doc</span>
-<span class="hljs-built_in">npm</span> run lint            <span class="hljs-comment"># run tslint on this project</span>
-<span class="hljs-built_in">npm</span> run doc                <span class="hljs-comment"># generate typedoc and yuidoc documentation</span>
-<span class="hljs-built_in">npm</span> run typescript-<span class="hljs-built_in">npm</span>    <span class="hljs-comment"># just compile the typescript output used in the npm module</span>
-</code></pre><p>When installing this module, it adds a pre-commit hook, that runs the <code>validate</code>
-					and <code>build</code> scripts before committing, so you can be sure that everything
-				checks out and all files that should be committed are generated.</p>
+				<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://github.com/mediamonks/seng-boilerplate.git
+</code></pre>
+				<p>Change to the seng-boilerplate directory:</p>
+				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> seng-boilerplate
+</code></pre>
+				<p>Install dev dependencies:</p>
+				<pre><code class="lang-sh">npm install
+</code></pre>
+				<p>Use one of the following main scripts:</p>
+				<pre><code class="lang-sh">npm run build           <span class="hljs-comment"># build this project</span>
+npm run generate           <span class="hljs-comment"># generate all artifacts (compiles ts, webpack, docs and coverage)</span>
+npm run typings            <span class="hljs-comment"># install .d.ts dependencies (done on install)</span>
+npm run <span class="hljs-built_in">test</span>-unit        <span class="hljs-comment"># run the unit tests</span>
+npm run validate        <span class="hljs-comment"># runs validation scripts, including test, lint and coverage check</span>
+npm run lint            <span class="hljs-comment"># run tslint on this project</span>
+npm run doc                <span class="hljs-comment"># generate typedoc and yuidoc documentation</span>
+npm run typescript-npm    <span class="hljs-comment"># just compile the typescript output used in the npm module</span>
+</code></pre>
+				<p>When installing this module, it adds a pre-commit hook, that runs the <code>validate</code>
+				script before committing, so you can be sure that everything checks out.</p>
 				<h2 id="contribute">Contribute</h2>
 				<p>View <a href="./CONTRIBUTING.md">CONTRIBUTING.md</a></p>
 				<h2 id="changelog">Changelog</h2>
@@ -177,7 +183,75 @@
 				<h3 id="typedoc">TypeDoc</h3>
 				<p>Todo: describe TypeDoc configuration and usage.</p>
 				<h3 id="travis">Travis</h3>
-				<p>Todo: describe Travis configuration and usage.</p>
+				<p>This project uses [Travis](<a href="https://travis-ci.org">https://travis-ci.org</a>] to build, test and
+				publish its code to npm. Travis is free for public Github repositories.</p>
+				<p>It runs on all commits, shows the build status for pull requests, and
+				publishes to npm when a new tag/release is created.</p>
+				<p>Travis only runs the <code>npm test</code> script, so have configured that script
+					to run everything we want Travis to check. Besides the unit tests, we
+				also run our validations and linters.</p>
+				<p>The travis configuration is placed in a <code>.travis.yml</code> file, consisting
+				of multiple sections.</p>
+				<ol>
+					<li>Defines the <code>node_js</code> <a href="https://docs.travis-ci.com/user/languages/javascript-with-nodejs">language</a>,
+					and tells travis on which node versions to run the process.</li>
+					<li>Before running, it needs to install some global dependencies, and
+					when it processes some coverage results.</li>
+					<li>It can do a <a href="https://docs.travis-ci.com/user/deployment/npm">npm deploy</a>,
+						telling it to keep the generated artifacts and only publish when run
+						on node 4 and when a tag was committed. It also contains the email
+					address and api key of the npm user.</li>
+					<li>Code Climate has a <a href="https://docs.travis-ci.com/user/code-climate/">travis plugin</a>
+					that automatically uploads the code coverage results.</li>
+				</ol>
+				<p>Because we want to keep the npm api key secret, we generate a secure
+					token with the <a href="https://github.com/travis-ci/travis.rb">Travis Client</a>,
+				a CLI written in ruby.</p>
+				<p>Before we can do this, we must make sure that the repository is added
+					to Travis, because Travis needs the repository owner/name info to make
+				sure the encrypted values only work for that repository. </p>
+				<ol>
+					<li><p>First you need to <a href="https://github.com/travis-ci/travis.rb#login">login</a>
+						with your travis account:</p>
+						<pre><code class="lang-sh">$ travis login
+</code></pre>
+						<p>To verify that you are logged in correctly you can check:</p>
+						<pre><code class="lang-sh">$ travis whoami
+</code></pre>
+					</li>
+					<li><p>Then make sure you are logged in to your npm account with the
+						<a href="https://docs.npmjs.com/cli/adduser">adduser</a> command:</p>
+						<pre><code class="lang-sh">$ npm adduser
+</code></pre>
+						<p>To verify that you are logged in correctly you can check:</p>
+						<pre><code class="lang-sh">$ npm whoami
+</code></pre>
+					</li>
+					<li><p>Now we need to grab your auth token so we can encrypt it:</p>
+						<pre><code class="lang-sh">$ cat ~/.npmrc
+
+<span class="hljs-comment"># outputs:</span>
+//registry.npmjs.org/:_authToken=&lt;your_auth_token&gt;
+</code></pre>
+					</li>
+					<li><p>Then let&#39;s encrypt that token using the travis <a href="https://github.com/travis-ci/travis.rb#encrypt">encrypt</a>
+						command:</p>
+						<pre><code class="lang-sh">$ travis encrypt &lt;your_auth_token&gt;
+Detected repository as mediamonks/seng-boilerplate, is this correct? |yes|
+Please add the following to your .travis.yml file:
+
+  secure: <span class="hljs-string">"YcN...Zb="</span>
+</code></pre>
+						<p>Now copy that last line, paste it into your <code>.travis.yml</code>, and make
+						sure it looks something like this:</p>
+						<pre><code class="lang-yml"><span class="hljs-attr">deploy:</span>
+<span class="hljs-attr">  provider:</span> npm
+<span class="hljs-attr">  email:</span> <span class="hljs-string">"john@doe.com"</span>
+<span class="hljs-attr">  api_key:</span>
+<span class="hljs-attr">    secure:</span> <span class="hljs-string">"YcN...Zb="</span>
+</code></pre>
+					</li>
+				</ol>
 				<h3 id="code-climate">Code Climate</h3>
 				<p>Todo: describe Code Climate configuration and usage.</p>
 				<h3 id="coverall">Coverall</h3>
