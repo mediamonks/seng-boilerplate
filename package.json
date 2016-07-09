@@ -25,7 +25,8 @@
     "yuidoc": "yuidoc -o doc/yuidoc/ -t ./node_modules/yuidoc-mediamonks-theme -H ./node_modules/yuidoc-mediamonks-theme/helpers/helpers.js src/",
     "generate": "npm-run-all clean compile test-unit doc",
     "build": "npm-run-all clean compile",
-    "build-npm": "npm-run-all clean test typescript-npm"
+    "build-npm": "npm-run-all clean test typescript-npm",
+    "build-dist": "npm-run-all clean typescript-system typescript-es6 webpack-dist"
   },
   "pre-push": [
     "validate"

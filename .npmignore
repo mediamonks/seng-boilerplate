@@ -7,6 +7,7 @@ typings
 .DS_Store
 npm-debug.log
 /coverage
+/dist
 /test/*.js
 !/test/index.js
 
@@ -19,7 +20,6 @@ tslint.json
 karma.conf.js
 CONTRIBUTING.md
 AUTHORS.md
-/dist
 /doc
 /example
 /src
