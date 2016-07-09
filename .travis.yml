@@ -16,15 +16,43 @@ after_script:
   - codeclimate-test-reporter < coverage/lcov.info
   - node_modules/.bin/coveralls < coverage/lcov.info
 
+before_deploy:
+  - npm run build-dist && node ./script/package-dist.js
+
 deploy:
-  provider: npm
-  email: 'devmonk@mediamonks.com'
-  api_key:
-    secure: ''
-  on:
-    tags: true
-    node: '4'
-  skip_cleanup: true
+  - provider: npm
+    email: 'devmonk@mediamonks.com'
+    api_key:
+      secure: ''
+    on:
+      tags: true
+      node: '4'
+    skip_cleanup: true
+
+  - provider: s3
+    access_key_id:
+      secure: 'BV9B80rsAWYaQkF23vQIT9o7536RCG9SYHUKff/aTlgRHnA9FqbBDork2CZ/u2FZO1XaX8CIDjRolLAFqCYfzO4kSufUdMEhkYtx+j0AX27lszVr4Xw0JZqIgZ6EfQq6rCs+Rq4nRR/qIjaifpxpXHdtbte2KTAhdLlAWgJM0JB8DZl8JGxwpByRxcRw+aJw1STqF4yCV7gV5R7LxBrlyFnOEgvTGR80L+d8twzIAoa3IRLYz8cW7SHLffaRVJLr6I0/Jcw8+LryXKHPkQd+/qrqOAtwZiUSlEmp9d+drqIHTre2nvN4gXzVas9Qg00aKStE3qnJJ9um0UiaGb0yQqXjNlTYLlwNZtT62DMI6UFIEs+/79WLWQ6hgvQS8IJ9wjzsB1is/Ml1OqvKyNOGaQp1bdJBlgmPUOcd9OCLLK7DcG22b2Ic9vMFEy5PAmQIZeYf5j6rRvXqy8eYJJt0TOrS1m024Y5Zau1WcrlVc/RM91QOlw3UOGZ6be5VRQRZ3tFhh+Wx1618x8UNVckiWZ9iqhtW90c0E6kZJDR7n+byKrxUQeyeGrJxpC8U5+ZuzfDgB6wcJ8SmNL1nR81L/jXx/TvvK7x/rEZgWw8Ra/8yB9W54Zb35frRCtF6XE907fIBOS1fMJ8sjNX8T0mXg3RdpWei8ZZUX9aadscKQDc='
+    secret_access_key:
+      secure: 'DRV5VfnUuuFjh5ZCAqHU2U8fqu+wnWeGxOeCUenC/4Zvt5w6h27c6p/SbHXtslN1PtotLiMrkb5T8fx0WmVVK51LeTaDeIa91XgKamemXBzrdNlfsYa2Iiag6m0aLqzVsM73TvLQaFR0YUy933MidZTiX/y1hy6rVOQT8OPRqnEog7gSy4IrlGe8hUyCqrPeQmzWuIj+UYDsJbkJ0lBGyJDf5s0XV4KjmT/s79v/McRS/9drlG0n0/v7uHdoMEXqTFeqQlwZuLwVsNdX1YT57fM4ES4U/ECPHPtcbAY6qJ3WS1WSLKXbLqNocNxTd3Xp6du6hpHsecvAWTvRwzI3YQasqtmZKDNLwkIw8H9YmhIP6sjnexWYZVbJDZFkBykvXCXj/NvBmH8a7yYc3uLAtULe5mSULz7fi2WvfYYwDz8ulDYYKpH4yt3D+4OHrWXQMiq8o6RogSV9jcXGb/aIFIBTArwEMlnBVEcu++wc9ORFi44AYRRe3dImD//cGGXn88Of/djKK1r+KquwUC631KHIi7Yif1RboDlwV7mBTM5f1DfhFad79Xmq/xBNbG2PKp6O6sQ93/pAAN80cVC9N0pI9nV4pjYv1XF8AhDgRjHhVV05K9n8RJq4mlA3Wwnswh+nwrDhpk9u3d52uATZFuRP3MGeCzJLOvZbX6jqhzw='
+    bucket: "mediamonks-development"
+    local_dir: 'dist'
+    upload-dir: 'seng/libs'
+    on:
+      tags: true
+      node: '4'
+    skip_cleanup: true
+    region: eu-west-1
+
+  - provider: releases
+    api_key:
+      secure: 'ahH+HZuXibkorBAflGeMNpxYEt2JHJ+z7t+ydktQZ8Umqn+dOEubTNZNqp4kmLC8lKD/EAPggSQGuRob9zP/m9tZGMnrqfy+RpokYP0OkVJnxW9NeMNBFMshTrxgH8CecHsJU59zrSUqRJA4EJkisQCQPj+i3go/xIVIOe0gYPxzNdobj5cuMQCahaMTHAkBACNcdkMkoo0Sg6+0pf4O/mG2g2sWYk3E4je8IVQkXTVsc/72TcRWBWRFsUlO8yLWp6DvgEZjC9fl28EvJTitIYCdIibhvrGnm4kl6jjIYrZ7cqXaPDnBL7vm+TQCfitg58OFgm+SsVU36lEIjT0IMMZm9lwPIA71K+OirnYw51lL6AibYuN2krfCWYNA8HT8O6D9g5DLFDfyqK1iQmZv0KXKjL2bdhluG+KT6jKGq1A9WgybcA2+0y6/lR5pXaMCRwM5fH4Fwf5IJtUz5H/3fFt1fHkYZ+y565E5ObS8TsutqrMzuwDZehQcr9OABRgkdEyETziW6FFD1Sq22PMZzLPR/tXDz5Uf4gu2iO/T0hxK6gtACTT/L+7UY7wG12xQqkMPd/k9fiwjnd3RWBAwweI1BId/xEPIUS1Vj/obTimCg3wnVpyH4nJyZ78U4guNfp+A9d67y04F8kPwq6rrSLYhtpaKkEj2TZsv8ACSMPM='
+    file:
+      - "seng-*.zip"
+      - "seng-*.tar.gz"
+    on:
+      tags: true
+      node: '4'
+    skip_cleanup: true
 
 addons:
   code_climate:
