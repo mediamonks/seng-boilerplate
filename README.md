@@ -36,7 +36,7 @@ import SengBoilerplate from 'seng-boilerplate';
 
 ## Documentation
 
-View the [generated documentation](https://rawgit.com/MediaMonks/seng-boilerplate/master/doc/typedoc/index.html).
+View the [generated documentation](https://rawgit.com/mediamonks/seng-boilerplate/master/doc/typedoc/index.html).
 
 
 ## Building
@@ -46,7 +46,7 @@ and [Node.js](http://nodejs.org/) installed.
 
 Clone a copy of the repo:
 ```sh
-git clone https://github.com/MediaMonks/seng-boilerplate.git
+git clone https://github.com/mediamonks/seng-boilerplate.git
 ```
 
 Change to the seng-boilerplate directory:
