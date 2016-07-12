@@ -10,11 +10,17 @@
     "removeComments": false,
     "noEmitHelpers": true,
     "sourceMap": false,
-    "inlineSourceMap": false,
-    "outDir": "./"
+    "inlineSourceMap": true
   },
-  "files": [
-    "./typings/index.d.ts",
-    "./src/index.ts"
-  ]
+  "exclude": [
+    "node_modules"
+  ],
+  "filesGlob": [
+    "../src/**/*.ts",
+    "../typings/index.d.ts"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "resolveGlobs": false,
+    "forkChecker": true
+  }
 }

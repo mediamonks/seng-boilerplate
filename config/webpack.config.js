@@ -40,7 +40,10 @@ module.exports = function()
 				{
 					test: /\.ts$/,
 					exclude: /node_modules/,
-					loader: 'ts'
+					loader: 'awesome-typescript-loader',
+					query: {
+						tsconfig: 'tsconfig.json'
+					}
 				}
 			]
 		},

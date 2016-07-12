@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "chai": "registry:npm/chai#3.5.0+20160415060238"
+  },
+  "globalDependencies": {
+    "webpack-env": "registry:dt/webpack-env#1.12.2+20160316155526"
   }
 }
