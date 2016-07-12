@@ -8,7 +8,7 @@ interface IExample
 	 *
 	 * @method foo
 	 * @param {string} str The input string
-	 * @returns {string}
+	 * @return {string}
 	 */
 	foo(str?:string):string;
 }

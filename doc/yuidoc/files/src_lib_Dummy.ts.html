@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>src/lib/Dummy.ts</title>
 	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="./assets/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
 
-	<link rel="stylesheet" href="./assets/css/custom.css">
+	<link rel="stylesheet" href="../assets/css/custom.css">
 
-	<link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap-theme.css">
-	<link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
+	<link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap-theme.css">
+	<link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
 </head>
 <body class="yui3-skin-sam">
 
 <div class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-brand">
-			<!-- 				<img alt="" src="./assets/css/logo.png" style="max-height: 65%;"
+			<!-- 				<img alt="" src="../assets/css/logo.png" style="max-height: 65%;"
 				     title="">
 			 -->
 			 (v)
@@ -49,8 +49,8 @@
 			
 				<div class="tab-content" style="border: 1px solid #DDD; border-top:0; padding-top: 10px; ">
 					<div class="tab-pane active" id="classes">
-			<ul class="list-unstyled"><li><strong name="undefined">example</strong><ul class="list-unstyled"><li>				- <a href="./classes/example.Dummy.html">Dummy</a>
-			</li><li>				- <a href="./classes/example.Example.html">Example</a>
+			<ul class="list-unstyled"><li><strong name="undefined">example</strong><ul class="list-unstyled"><li>				- <a href="../classes/example.Dummy.html">Dummy</a>
+			</li><li>				- <a href="../classes/example.Example.html">Example</a>
 			</li></ul></li></ul>		</div>
 			
 					<div class="tab-pane" id="modules">
@@ -86,41 +86,54 @@
 			
 			<div class="apidocs">
 				<div id="docs-main">
-					<div class="content"><div class="apidocs">
-	<div id="docs-main" class="content">
-		<p>
-			Browse to a module or class using the sidebar to view its API documentation.
-		</p>
-
-		<h2>Keyboard Shortcuts</h2>
-
-		<ul>
-			<li><p>Press <kbd>s</kbd> to focus the API search box.</p></li>
-
-			<li><p>Use <kbd>Up</kbd> and <kbd>Down</kbd> to select classes, modules, and search results.</p></li>
-
-			<li class="mac-only"><p>With the API search box or sidebar focused, use <kbd><span
-				class="cmd">&#x2318;</span>-Left</kbd> or <kbd><span class="cmd">&#x2318;</span>-Right</kbd> to switch
-				sidebar tabs.</p></li>
-
-			<li class="pc-only"><p>With the API search box or sidebar focused, use <kbd>Ctrl+Left</kbd> and <kbd>Ctrl+Right</kbd>
-				to switch sidebar tabs.</p></li>
-		</ul>
-	</div>
+					<div class="content"><div class="page-header">
+    <h1>src/lib/Dummy.ts <small>File</small></h1>
 </div>
 
-
+<div class="file">
+<pre class="prettyprint linenums">/**
+ * Test file for code coverage checks
+ * This file is not covered by any tests, but should show up in code coverage
+ * results as a very low coverage percentage.
+ *
+ * @namespace example
+ * @class Dummy
+ * @constructor
+ */
+export default class Dummy
+{
+	/**
+	 * Returns a value!
+	 *
+	 * @method foo
+	 * @param {string} str The input string
+	 * @return {string}
+	 */
+	public foo(str?:string):string
+	{
+		if (typeof str == 'undefined')
+		{
+			return 'baz';
+		}
+		else
+		{
+			return str + 'bar';
+		}
+	}
+}
+</pre>
+</div>
 </div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<script src="./assets/vendor/jquery/jquery-2.1.3.min.js"></script>
-<script src="./assets/vendor/bootstrap/js/typeahead.js"></script>
-<script src="./assets/vendor/bootstrap/js/bootstrap.js"></script>
-<script src="./assets/vendor/prettify/prettify-min.js"></script>
-<script src="./assets/js/yuidoc-bootstrap.js"></script>
+<script src="../assets/vendor/jquery/jquery-2.1.3.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/typeahead.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
 <script>prettyPrint();</script>
 </body>
 </html>

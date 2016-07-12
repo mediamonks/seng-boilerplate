@@ -14,7 +14,7 @@ export default class Dummy
 	 *
 	 * @method foo
 	 * @param {string} str The input string
-	 * @returns {string}
+	 * @return {string}
 	 */
 	public foo(str?:string):string
 	{

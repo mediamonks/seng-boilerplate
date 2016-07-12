@@ -73,17 +73,44 @@
 				<h1 id="seng-boilerplate">seng-boilerplate</h1>
 				<p>Add a description here...</p>
 				<h2 id="installation">Installation</h2>
+				<h3 id="npm">npm</h3>
 				<pre><code class="lang-sh">npm i -S seng-boilerplate
 </code></pre>
-				<p>Or grab one of the following files from the <code>/dist/</code> folder for manual use:</p>
-				<ul>
-					<li><strong>umd</strong> (bundled with webpack)</li>
-					<li><strong>amd</strong> (bundled with webpack)</li>
-					<li><strong>commonjs2</strong> (bundled with webpack, but why don&#39;t you use npm?)</li>
-					<li><strong>browser</strong> (bundled with webpack, available as <code>window.SengBoilerplate</code>)</li>
-					<li><strong>system</strong></li>
-					<li><strong>es6</strong></li>
-				</ul>
+				<h3 id="other">other</h3>
+				<p>We also have browser, amd, commonjs, umd, systemjs and es6 versions of
+				this module available attached to the <a href="https://github.com/mediamonks/seng-boilerplate/releases">Github Releases</a>.</p>
+				<!---
+
+Note: The below cannot be used yet, as there is no way to link to a
+specific version yet without updating this readme manually after each
+new version.
+
+
+### browser
+
+```html
+<script src="http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.min.js"></script>
+```
+```js
+console.log(window.SengBoilerplate)
+```
+
+### other
+
+Besides the browser version, there are other versions available for
+download as well:
+
+- [browser](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.min.js))
+- [umd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-umd.min.js))
+- [amd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-amd.js)
+- [commonjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-commonjs.js)
+- [systemjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-system.js)
+- [es6](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-es6.zip)
+
+-->
+				<h3 id="manual">manual</h3>
+				<p>Check the <strong>build</strong> section below to see your you can build for all the
+				targets yourself.</p>
 				<h2 id="usage">Usage</h2>
 				<pre><code class="lang-ts"><span class="hljs-keyword">import</span> SengBoilerplate from <span class="hljs-string">'seng-boilerplate'</span>;
 <span class="hljs-comment">// import SengBoilerplate from 'seng-boilerplate/lib/classname';</span>
@@ -114,8 +141,27 @@ npm run lint            <span class="hljs-comment"># run tslint on this project<
 npm run doc                <span class="hljs-comment"># generate typedoc and yuidoc documentation</span>
 npm run typescript-npm    <span class="hljs-comment"># just compile the typescript output used in the npm module</span>
 </code></pre>
-				<p>When installing this module, it adds a pre-commit hook, that runs the <code>validate</code>
+				<p>When installing this module, it adds a pre-push hook, that runs the <code>validate</code>
 				script before committing, so you can be sure that everything checks out.</p>
+				<p>If you want to create the distribution files yourself, you can run the
+					<code>build-dist</code> script, and the following files will get generated in the
+				<code>dist</code> folder:</p>
+				<ul>
+					<li><strong>/dist/seng-boilerplate.js</strong>: bundled with webpack, can be loaded from
+					a script tag, available as <code>window.SengBoilerplate</code></li>
+					<li><strong>/dist/seng-boilerplate.min.js</strong>: same as above, but minified</li>
+					<li><strong>/dist/seng-boilerplate-amd.js</strong>: bundled with webpack, can be used
+					with e.g. requirejs</li>
+					<li><strong>/dist/seng-boilerplate-commonjs.js</strong>: bundled with webpack, can be
+					used in systems that support commonjs, but you should just use npm</li>
+					<li><strong>/dist/seng-boilerplate-umd.js</strong>: bundled with webpack, works in the
+					browser, with requirejs, and in a commonjs system</li>
+					<li><strong>/dist/seng-boilerplate-umd.min.js</strong>: same as above, but minified</li>
+					<li><strong>/dist/seng-boilerplate-system.js</strong>: bundled with typescript, can be
+					used in systems    that support systemjs</li>
+					<li><strong>/dist/seng-boilerplate-es6.zip</strong>: transpiled with typescript, only
+					types are removed from the source files</li>
+				</ul>
 				<h2 id="contribute">Contribute</h2>
 				<p>View <a href="./CONTRIBUTING.md">CONTRIBUTING.md</a></p>
 				<h2 id="changelog">Changelog</h2>
@@ -183,7 +229,7 @@ npm run typescript-npm    <span class="hljs-comment"># just compile the typescri
 				<h3 id="typedoc">TypeDoc</h3>
 				<p>Todo: describe TypeDoc configuration and usage.</p>
 				<h3 id="travis">Travis</h3>
-				<p>This project uses [Travis](<a href="https://travis-ci.org">https://travis-ci.org</a>] to build, test and
+				<p>This project uses <a href="https://travis-ci.org">Travis</a> to build, test and
 				publish its code to npm. Travis is free for public Github repositories.</p>
 				<p>It runs on all commits, shows the build status for pull requests, and
 				publishes to npm when a new tag/release is created.</p>
