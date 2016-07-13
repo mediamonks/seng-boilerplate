@@ -10,7 +10,8 @@
     "removeComments": false,
     "noEmitHelpers": true,
     "sourceMap": false,
-    "inlineSourceMap": true
+    "inlineSourceMap": false,
+    "outDir": "./"
   },
   "files": [
     "typings/index.d.ts"
