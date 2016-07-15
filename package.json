@@ -71,6 +71,7 @@
     "pre-push": "^0.1.1",
     "remap-istanbul": "^0.6.4",
     "rimraf": "^2.5.2",
+    "ts-helpers": "^1.1.1",
     "tslint": "^3.3.0",
     "typedoc": "^0.4.3",
     "typescript": "^1.8.0",
