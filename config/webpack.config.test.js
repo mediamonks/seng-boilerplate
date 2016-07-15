@@ -16,8 +16,6 @@ module.exports = function()
 		// entry is the "main" source file we want to include/import
 		entry: './test/index.ts',
 
-		verbose: true,
-
 		module: {
 			loaders: [
 				/**

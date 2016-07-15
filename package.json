@@ -12,7 +12,7 @@
     "validate": "npm-run-all -p validate-webpack lint test-unit -s check-coverage",
     "test-unit": "karma start config/karma.conf.js --single-run --browsers PhantomJS",
     "check-coverage": "istanbul check-coverage --statement 1 --branches 1 --functions 1 --lines 1",
-    "validate-webpack": "webpack-validator config/webpack.config.js",
+    "validate-webpack": "webpack-validator config/webpack.config.dist.js && webpack-validator config/webpack.config.test.js",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "clean": "rimraf dist lib index.js index.d.ts coverage \"seng-*.@(zip|tar.gz)\"",
     "compile": "npm-run-all typescript-npm typescript-es6 webpack-dist",
