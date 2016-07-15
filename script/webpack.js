@@ -1,4 +1,5 @@
-var webpack = require("webpack");
+const webpack = require("webpack");
+const WebpackSystemRegister = require('webpack-system-register');
 
 var uglifyPluginSetting = new webpack.optimize.UglifyJsPlugin({
 	sourceMap: false,
@@ -6,7 +7,7 @@ var uglifyPluginSetting = new webpack.optimize.UglifyJsPlugin({
 });
 
 
-var baseConfig = require('../config/webpack.config');
+var baseConfig = require('../config/webpack.config.dist');
 
 var umd = baseConfig();
 umd.output.libraryTarget = "umd";
@@ -32,6 +33,19 @@ cjs2.output.libraryTarget = "commonjs2";
 cjs2.output.filename = "./dist/seng-boilerplate-commonjs.js";
 
 
+var system = baseConfig();
+delete system.output.library;
+system.plugins.push(
+	// adds a systemjs wrapper around the normal webpack export
+	new WebpackSystemRegister({
+		systemjsDeps: [
+		],
+		registerName: 'seng-boilerplate', // optional name that SystemJS will know this bundle as.
+	})
+);
+system.output.filename = "./dist/seng-boilerplate-systemjs.js";
+
+
 var browser = baseConfig();
 browser.output.libraryTarget = "var";
 browser.output.filename = "./dist/seng-boilerplate.js";
@@ -45,7 +59,7 @@ browserMin.plugins = browserMin.plugins.concat(
 );
 
 
-[umd, umdMin, amd, cjs2, browser, browserMin].forEach(function(config)
+[umd, umdMin, amd, cjs2, browser, browserMin, system].forEach(function(config)
 {
 	// returns a Compiler instance
 	webpack(config, function (err, stats)
