@@ -6,9 +6,6 @@ module.exports = function(config)
 {
 	config.set({
 
-		// base path that will be used to resolve all patterns (eg. files, exclude)
-		basePath: '../',
-
 		// List of test frameworks we will use. Most of them are provided by separate packages (adapters).
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
 		frameworks: ['mocha', 'chai', 'source-map-support'],
@@ -34,7 +31,7 @@ module.exports = function(config)
 			]
 		},
 
-		webpack: require('./webpack.config.test')(),
+		webpack: require('./config/webpack.config.test')(),
 
 		// Make dev server silent.
 		webpackServer: { noInfo: true },
