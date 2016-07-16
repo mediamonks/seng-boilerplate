@@ -8,6 +8,7 @@
     "preserveConstEnums": true,
     "noImplicitAny": false,
     "removeComments": false,
+    "noEmitHelpers": true,
     "sourceMap": false,
     "inlineSourceMap": false,
     "outDir": "./"
