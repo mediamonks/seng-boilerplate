@@ -8,10 +8,15 @@
     "preserveConstEnums": true,
     "noImplicitAny": false,
     "removeComments": false,
-    "noEmitHelpers": true,
     "sourceMap": false,
     "inlineSourceMap": false,
-    "outDir": "./"
+    "forceConsistentCasingInFileNames": true,
+    "noEmitHelpers": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "files": [
     "typings/index.d.ts"

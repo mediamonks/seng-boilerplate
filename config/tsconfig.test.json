@@ -9,7 +9,14 @@
     "noImplicitAny": false,
     "removeComments": false,
     "sourceMap": false,
-    "inlineSourceMap": true
+    "inlineSourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitHelpers": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "files": [
     "typings/index.d.ts"

@@ -10,11 +10,22 @@
     "removeComments": false,
     "sourceMap": false,
     "inlineSourceMap": false,
-    "outDir": "./"
+    "forceConsistentCasingInFileNames": true,
+    "noEmitHelpers": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./npm"
   },
   "files": [
-    "./typings/index.d.ts",
-    "./src/index.ts",
-    "./src/lib/Dummy.ts"
+    "typings/index.d.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/bundle.ts"
   ]
 }
