@@ -25,7 +25,6 @@
     "compile:dist:webpack": "node script/webpack.js",
     "doc": "npm-run-all -p doc:*",
     "doc:typedoc": "typedoc --out doc/typedoc/ src/",
-    "doc:yuidoc": "yuidoc -o doc/yuidoc/ -e .ts -t ./node_modules/yuidoc-mediamonks-theme -H ./node_modules/yuidoc-mediamonks-theme/helpers/helpers.js src/",
     "generate": "npm-run-all clean compile test:unit doc",
     "build": "npm-run-all clean compile",
     "build:npm": "npm-run-all test compile:npm",
@@ -49,7 +48,6 @@
     "compile:dist:webpack": "Compiles all dist bundles with webpack",
     "doc": "Placeholder for all doc scripts",
     "doc:typedoc": "Runs typedoc",
-    "doc:yuidoc": "Runs yuidoc",
     "generate": "Placeholder for all scripts that generate something (code, test, doc, etc)",
     "build": "Cleans and compiles everything",
     "build:npm": "Prepares the checkout for an npm publish",
@@ -105,9 +103,7 @@
     "typescript": "^1.8.10",
     "webpack": "^1.12.12",
     "webpack-system-register": "^1.3.2",
-    "webpack-validator": "^2.1.3",
-    "yuidoc-mediamonks-theme": "^2.0.2",
-    "yuidocjs": "^0.10.0"
+    "webpack-validator": "^2.1.3"
   },
   "dependencies": {}
 }
