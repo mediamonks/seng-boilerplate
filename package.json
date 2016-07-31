@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "archiver": "^1.0.0",
-    "awesome-typescript-loader": "^2.0.1",
+    "awesome-typescript-loader": "2.0.1",
     "chai": "^3.5.0",
     "coveralls": "^2.11.6",
     "es6-promise": "^3.2.1",
