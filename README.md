@@ -22,7 +22,7 @@ npm i -S seng-boilerplate
 We also have browser, amd, commonjs, umd, systemjs and es6 versions of
 this module available attached to the [Github Releases](https://github.com/mediamonks/seng-boilerplate/releases).
 
-<!--- 
+<!---
 
 Note: The below cannot be used yet, as there is no way to link to a
 specific version yet without updating this readme manually after each
@@ -85,6 +85,11 @@ git clone https://github.com/mediamonks/seng-boilerplate.git
 Change to the seng-boilerplate directory:
 ```sh
 cd seng-boilerplate
+```
+
+Install typings cli utility:
+```sh
+npm install typings --global
 ```
 
 Install dev dependencies:
@@ -243,57 +248,57 @@ a CLI written in ruby.
 
 Before we can do this, we must make sure that the repository is added
 to Travis, because Travis needs the repository owner/name info to make
-sure the encrypted values only work for that repository. 
+sure the encrypted values only work for that repository.
 
 1.  First you need to [login](https://github.com/travis-ci/travis.rb#login)
     with your travis account:
-    
+
     ```sh
     $ travis login
     ```
-    
+
     To verify that you are logged in correctly you can check:
-    
+
     ```sh
     $ travis whoami
     ```
-    
+
 2.  Then make sure you are logged in to your npm account with the
     [adduser](https://docs.npmjs.com/cli/adduser) command:
-    
+
     ```sh
     $ npm adduser
     ```
-    
+
     To verify that you are logged in correctly you can check:
-        
+
     ```sh
     $ npm whoami
     ```
-    
+
 3.  Now we need to grab your auth token so we can encrypt it:
-    
+
     ```sh
     $ cat ~/.npmrc
-    
+
     # outputs:
     //registry.npmjs.org/:_authToken=<your_auth_token>
     ```
-    
+
 4.  Then let's encrypt that token using the travis [encrypt](https://github.com/travis-ci/travis.rb#encrypt)
     command:
-    
+
     ```sh
     $ travis encrypt <your_auth_token>
     Detected repository as mediamonks/seng-boilerplate, is this correct? |yes|
     Please add the following to your .travis.yml file:
-    
+
       secure: "YcN...Zb="
     ```
-    
+
     Now copy that last line, paste it into your `.travis.yml`, and make
     sure it looks something like this:
-    
+
     ```yml
     deploy:
       provider: npm
