@@ -14,6 +14,6 @@
     "outDir": "./"
   },
   "files": [
-    "typings/index.d.ts"
+    "definition/typings/index.d.ts"
   ]
 }
