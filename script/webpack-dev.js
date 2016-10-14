@@ -10,16 +10,7 @@ let browser = baseConfig();
 browser.output.libraryTarget = "var";
 browser.output.filename = "./dist/seng-boilerplate.js";
 browser.output.path = path.join(__dirname, '../dist');
-
-if(typeof browser.entry === 'string')
-{
-	const { entry }  = browser;
-	browser.entry = [serverURI, entry];
-}
-else if(typeof browser.entry === 'object')
-{
-	browser.entry.unshift(serverURI)
-}
+browser.entry = [serverURI, browser.entry];
 
 browser.devtool = 'source-map';
 browser.watch = true;
@@ -31,7 +22,7 @@ const server = new webpackDevServer(compiler, {
 	contentBase: "example/"
 });
 
-server.listen(port, function (err) {
+server.listen(port, function(err) {
 	if (err) {
 		console.log(err);
 		return

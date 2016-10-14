@@ -27,7 +27,7 @@
     "doc:typedoc": "typedoc --out doc/typedoc/ src/",
     "generate": "npm-run-all clean compile test:unit doc",
     "build": "npm-run-all clean compile",
-    "dev": "node script/webpack-client.js",
+    "dev": "node script/webpack-dev.js",
     "build:npm": "npm-run-all test compile:npm",
     "build:dist": "npm-run-all clean:dist compile:dist:**"
   },
@@ -51,7 +51,7 @@
     "doc:typedoc": "Runs typedoc",
     "generate": "Placeholder for all scripts that generate something (code, test, doc, etc)",
     "build": "Cleans and compiles everything",
-    "dev": "Compiles browser dist bundle with webpack",
+    "dev": "Compiles browser dist bundle with webpack and starts server",
     "build:npm": "Prepares the checkout for an npm publish",
     "build:dist": "Prepares the checkout for travis deployments to github and s3"
   },
