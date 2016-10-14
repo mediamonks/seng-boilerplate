@@ -14,11 +14,11 @@ browser.output.path = path.join(__dirname, '../dist');
 if(typeof browser.entry === 'string')
 {
 	const { entry }  = browser;
-	browser.entry = { app: [serverURI, entry]};
+	browser.entry = [serverURI, entry];
 }
-else if(typeof browser.entry.app === 'object')
+else if(typeof browser.entry === 'object')
 {
-	browser.entry.app.unshift(serverURI)
+	browser.entry.unshift(serverURI)
 }
 
 browser.devtool = 'source-map';
