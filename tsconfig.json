@@ -13,7 +13,7 @@
     "outDir": "./"
   },
   "files": [
-    "./typings/index.d.ts",
+    "./definition/index.d.ts",
     "./src/index.ts",
     "./src/lib/Dummy.ts"
   ]
