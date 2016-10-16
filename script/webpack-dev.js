@@ -3,7 +3,7 @@ var webpackDevServer = require('webpack-dev-server');
 var path = require('path');
 var baseConfig = require('../config/webpack.config.dist');
 
-var port = 8080;
+var port = 8085;
 var serverURI = `webpack-dev-server/client?http://localhost:${port}/`;
 
 var browser = baseConfig();
