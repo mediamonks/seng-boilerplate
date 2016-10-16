@@ -1,12 +1,12 @@
-const webpack = require("webpack");
-const webpackDevServer = require('webpack-dev-server');
-const path = require('path');
-const baseConfig = require('../config/webpack.config.dist');
+var webpack = require("webpack");
+var webpackDevServer = require('webpack-dev-server');
+var path = require('path');
+var baseConfig = require('../config/webpack.config.dist');
 
-const port = 8080;
-const serverURI = `webpack-dev-server/client?http://localhost:${port}/`;
+var port = 8080;
+var serverURI = `webpack-dev-server/client?http://localhost:${port}/`;
 
-let browser = baseConfig();
+var browser = baseConfig();
 browser.output.libraryTarget = "var";
 browser.output.filename = "./dist/seng-boilerplate.js";
 browser.output.path = path.join(__dirname, '../dist');
@@ -17,8 +17,8 @@ browser.watch = true;
 browser.progress = true;
 browser.keepalive = true;
 
-const compiler = webpack(browser);
-const server = new webpackDevServer(compiler, {
+var compiler = webpack(browser);
+var server = new webpackDevServer(compiler, {
 	contentBase: "example/"
 });
 
