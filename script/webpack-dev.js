@@ -19,7 +19,11 @@ browser.keepalive = true;
 
 var compiler = webpack(browser);
 var server = new webpackDevServer(compiler, {
-	contentBase: "example/"
+	contentBase: "example/",
+	stats: {
+		colors: true,
+		chunks: false
+	}
 });
 
 server.listen(port, function(err) {
