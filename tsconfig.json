@@ -19,9 +19,6 @@
     "noUnusedParameters": true,
     "outDir": "./npm"
   },
-  "files": [
-    "typings/index.d.ts"
-  ],
   "include": [
     "src/**/*"
   ],

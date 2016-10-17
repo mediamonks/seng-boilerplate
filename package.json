@@ -25,9 +25,9 @@
     "compile:dist:webpack": "node script/webpack.js",
     "doc": "npm-run-all -p doc:*",
     "doc:typedoc": "typedoc --out doc/typedoc/ src/",
-    "doc:yuidoc": "yuidoc -o doc/yuidoc/ -e .ts -t ./node_modules/yuidoc-mediamonks-theme -H ./node_modules/yuidoc-mediamonks-theme/helpers/helpers.js src/",
     "generate": "npm-run-all clean compile test:unit doc",
     "build": "npm-run-all clean compile",
+    "dev": "node script/webpack-dev.js",
     "build:npm": "npm-run-all test compile:npm",
     "build:dist": "npm-run-all clean:dist compile:dist:**"
   },
@@ -49,9 +49,9 @@
     "compile:dist:webpack": "Compiles all dist bundles with webpack",
     "doc": "Placeholder for all doc scripts",
     "doc:typedoc": "Runs typedoc",
-    "doc:yuidoc": "Runs yuidoc",
     "generate": "Placeholder for all scripts that generate something (code, test, doc, etc)",
     "build": "Cleans and compiles everything",
+    "dev": "Compiles browser dist bundle with webpack and starts server",
     "build:npm": "Prepares the checkout for an npm publish",
     "build:dist": "Prepares the checkout for travis deployments to github and s3"
   },
@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "archiver": "^1.0.0",
-    "awesome-typescript-loader": "^2.0.1",
+    "awesome-typescript-loader": "2.0.1",
     "chai": "^3.5.0",
     "coveralls": "^2.11.6",
     "es6-promise": "^3.2.1",
@@ -106,8 +106,7 @@
     "webpack": "^1.12.12",
     "webpack-system-register": "^1.3.2",
     "webpack-validator": "^2.1.3",
-    "yuidoc-mediamonks-theme": "^2.0.2",
-    "yuidocjs": "^0.10.0"
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {}
 }
