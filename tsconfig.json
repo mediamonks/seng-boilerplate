@@ -20,12 +20,12 @@
     "outDir": "./npm"
   },
   "files": [
-    "definition/index.d.ts"
+    "./definition/index.d.ts"
   ],
   "include": [
-    "src/**/*"
+    "./src/**/*"
   ],
   "exclude": [
-    "src/bundle.ts"
+    "./src/bundle.ts"
   ]
 }

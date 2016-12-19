@@ -3,11 +3,8 @@
   "version": "1.2.0",
   "description": "Boilerplate and example project for all Seng projects",
   "main": "index.js",
-  "typings": "index",
   "scripts": {
-    "postinstall": "npm run typings",
     "prepublish": "npm run build:npm",
-    "typings": "typings install",
     "test": "npm-run-all test:*",
     "test:unit": "karma start --single-run --browsers PhantomJS",
     "validate": "npm-run-all -p validate:webpack lint test:unit -s validate:coverage",
@@ -105,11 +102,13 @@
     "ts-helpers": "^1.1.1",
     "tslint": "^3.3.0",
     "typedoc": "^0.4.3",
-    "typescript": "^2.0.3",
+    "typescript": "^2.1.4",
     "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.16.2",
     "webpack-system-register": "^1.3.2",
-    "webpack-validator": "^2.1.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-validator": "^2.1.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ts-helpers": "^1.1.2"
+  }
 }
