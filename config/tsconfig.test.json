@@ -11,14 +11,14 @@
     "sourceMap": false,
     "inlineSourceMap": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmitHelpers": true,
-    "strictNullChecks": true,
+    "noEmitHelpers": false,
+    "strictNullChecks": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
   "files": [
-    "definition/index.d.ts"
+    "../definition/index.d.ts"
   ]
 }
