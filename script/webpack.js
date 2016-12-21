@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const WebpackSystemRegister = require('webpack-system-register');
+const Promise = require('es6-promise');
 
 var uglifyPluginSetting = new webpack.optimize.UglifyJsPlugin({
 	sourceMap: false,
@@ -58,29 +59,32 @@ browserMin.plugins = browserMin.plugins.concat(
 	uglifyPluginSetting
 );
 
+[umd, umdMin, amd, cjs2, browser, browserMin, system].reduce(function (prev, config) {
+	return prev.then(function() {
+		return new Promise(function(resolve, reject) {
+			webpack(config, function (err, stats)
+			{
+				if (err)
+				{
+					console.error('err', err);
+					reject(err);
+					return;
+				}
 
-[umd, umdMin, amd, cjs2, browser, browserMin, system].forEach(function(config)
-{
-	// returns a Compiler instance
-	webpack(config, function (err, stats)
-	{
-		if (err)
-		{
-			console.error(err);
-			return;
-		}
-
-		var jsonStats = stats.toJson();
-		if (jsonStats.errors.length > 0)
-		{
-			console.error(jsonStats.errors);
-			return;
-		}
-		if (jsonStats.warnings.length > 0)
-		{
-			console.warn(jsonStats.warnings);
-		}
-		console.log(stats.toString());
+				var jsonStats = stats.toJson();
+				if (jsonStats.errors.length > 0)
+				{
+					console.error('stats error', jsonStats.errors);
+					reject(err);
+					return;
+				}
+				if (jsonStats.warnings.length > 0)
+				{
+					console.warn('warn', jsonStats.warnings);
+				}
+				console.log('log', stats.toString());
+				resolve();
+			});
+		});
 	});
-});
-
+}, Promise.resolve());
