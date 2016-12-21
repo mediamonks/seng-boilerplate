@@ -44,7 +44,7 @@ module.exports = function()
 					exclude: /node_modules/,
 					loader: 'awesome-typescript-loader',
 					query: {
-						tsconfig: 'config/tsconfig.webpack.json'
+						configFileName: './config/tsconfig.webpack.json'
 					}
 				}
 			]
