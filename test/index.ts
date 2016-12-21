@@ -1,5 +1,5 @@
 // require all test files
-const testsContext = require.context(
+const testsContext = (<any> require).context(
 	'./',
 	true,
 	/Spec\.ts/
@@ -8,7 +8,7 @@ const testsContext = require.context(
 testsContext.keys().forEach(testsContext);
 
 // require all source files
-const sourcesContext = require.context(
+const sourcesContext = (<any> require).context(
 	'../src/',
 	true,
 	/\.ts$/
