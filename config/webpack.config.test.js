@@ -30,8 +30,9 @@ module.exports = function()
 					test: /\.ts$/,
 					exclude: /node_modules/,
 					loader: 'awesome-typescript-loader',
+
 					query: {
-						tsconfig: 'config/tsconfig.test.json'
+						configFileName: './config/tsconfig.test.json'
 					}
 				}
 			],
