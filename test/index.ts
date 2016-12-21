@@ -1,3 +1,5 @@
+declare var require:any;
+
 // require all test files
 const testsContext = (<any> require).context(
 	'./',
