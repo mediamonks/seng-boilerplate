@@ -111,6 +111,5 @@
     "webpack-validator": "^2.1.3",
     "webpack-dev-server": "^1.16.2"
   },
-  "Dependencies": {
-  }
+  "dependencies": {}
 }
