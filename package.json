@@ -10,6 +10,7 @@
     "typings": "typings install",
     "test": "npm-run-all test:*",
     "test:unit": "karma start --single-run --browsers PhantomJS",
+    "test:unit:dev": "karma start karma.conf.dev.js",
     "validate": "npm-run-all -p validate:webpack lint test:unit -s validate:coverage",
     "validate:webpack": "webpack-validator config/webpack.config.dist.js && webpack-validator config/webpack.config.test.js",
     "validate:coverage": "istanbul check-coverage --statement 1 --branches 1 --functions 1 --lines 1",
@@ -34,6 +35,7 @@
   "scriptsComment": {
     "test": "Placeholder for all types of tests",
     "test:unit": "Runs unit tests with Karma in PhantomJS",
+    "test:unit:dev": "Runs unit tests with Karma in PhantomJS (with the watch mode)",
     "validate": "Runs all scripts that validate if the contents of this repos is correct",
     "validate:webpack": "Validates the webpack config file",
     "validate:coverage": "Checks if the code coverage results are above a defined minimun",
@@ -87,6 +89,7 @@
     "karma-chai": "^0.1.0",
     "karma-coverage": "^1.0.0",
     "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.2.0",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-remap-istanbul": "^0.1.1",
     "karma-source-map-support": "^1.1.0",
@@ -108,5 +111,6 @@
     "webpack-validator": "^2.1.3",
     "webpack-dev-server": "^1.16.2"
   },
-  "dependencies": {}
+  "Dependencies": {
+  }
 }
