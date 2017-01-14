@@ -8,7 +8,7 @@ module.exports = function(config)
 
 		// List of test frameworks we will use. Most of them are provided by separate packages (adapters).
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-		frameworks: ['mocha', 'chai', 'source-map-support'],
+		frameworks: ['mocha', 'chai'],
 
 		// Entry point / test environment builder is also written in TypeScript.
 		files: [
@@ -27,7 +27,8 @@ module.exports = function(config)
 				'coverage'
 			],
 			'./test/**/*.ts': [
-				'webpack'
+				'webpack',
+				'sourcemap'
 			]
 		},
 
