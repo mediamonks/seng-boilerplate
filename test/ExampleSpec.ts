@@ -2,6 +2,7 @@ import Example from '../src/lib/Example';
 import IExample from '../src/lib/IExample';
 import {mockExample} from './ExampleMock';
 import {expect} from 'chai';
+import {} from 'mocha';
 
 let example:IExample;
 
