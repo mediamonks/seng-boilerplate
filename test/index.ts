@@ -1,10 +1,8 @@
-declare var require:any;
-
 // require all test files
 const testsContext = (<any> require).context(
 	'./',
 	true,
-	/Spec\.ts/
+	/Spec\.ts/,
 );
 
 testsContext.keys().forEach(testsContext);
@@ -13,7 +11,7 @@ testsContext.keys().forEach(testsContext);
 const sourcesContext = (<any> require).context(
 	'../src/',
 	true,
-	/\.ts$/
+	/\.ts$/,
 );
 
 sourcesContext.keys().forEach(sourcesContext);

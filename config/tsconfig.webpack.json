@@ -16,9 +16,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
-  },
-  "files": [
-    "../definition/index.d.ts"
-  ]
+    "noUnusedParameters": true,
+    "typeRoots": ["../node_modules/@types"]
+  }
 }
