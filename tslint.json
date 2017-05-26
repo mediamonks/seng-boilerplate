@@ -1,73 +1,19 @@
 {
+  "extends": "tslint-config-airbnb",
+  "defaultSeverity": "error",
   "rules": {
-    "ban": [false],
-    "class-name": true,
-    "comment-format": [false],
-    "curly": true,
-    "eofline": false,
-    "forin": true,
-    "indent": [true, 4],
-    "interface-name": false,
-    "jsdoc-format": false,
-    "label-position": true,
-    "label-undefined": true,
-    "member-ordering": [true,
-      "public-before-private",
-      "static-before-instance",
-      "variables-before-functions"
+    "no-debugger": 2,
+    "no-console": 1,
+    "prefer-array-literal": [ true, { "allow-type-parameters": true } ],
+    "variable-name": [ true, "allow-pascal-case" ],
+    "indent": [true, "tabs"],
+    "ter-indent": [
+      true,
+      "tab",
+      {
+        "SwitchCase": 1
+      }
     ],
-    "no-any": false,
-    "no-arg": true,
-    "no-bitwise": false,
-    "no-console": [false],
-    "no-construct": true,
-    "no-constructor-vars": true,
-    "no-debugger": true,
-    "no-duplicate-key": true,
-    "no-duplicate-variable": true,
-    "no-empty": true,
-    "no-eval": true,
-    "no-string-literal": false,
-    "no-switch-case-fall-through": false,
-    "trailing-comma": false,
-    "no-trailing-whitespace": false,
-    "no-unreachable": true,
-    "no-unused-expression": true,
-    "no-unused-variable": true,
-    "no-use-before-declare": true,
-    "no-var-requires": false,
-    "one-line": [false],
-    "quotemark": [false, "single"],
-    "radix": true,
-    "semicolon": true,
-    "triple-equals": [false, "allow-null-check"],
-    "typedef": [true,
-      "indexSignature",
-      "parameter",
-      "propertySignature",
-      "variableDeclarator",
-      "memberVariableDeclarator"
-    ],
-    "typedef-whitespace": [true,
-      ["callSignature", "noSpace"],
-      ["indexSignature", "noSpace"],
-      ["parameter", "noSpace"],
-      ["propertySignature", "noSpace"],
-      ["variableDeclarator", "noSpace"],
-      ["memberVariableDeclarator", "noSpace"],
-      ["catchClause", "noSpace"]
-    ],
-    "use-strict": [false,
-      "check-module",
-      "check-function"
-    ],
-    "variable-name": [true,
-      "allow-leading-underscore"
-    ],
-    "whitespace": [true,
-      "check-decl",
-      "check-operator",
-      "check-separator"
-    ]
+    "max-line-length": [true, 120]
   }
 }
