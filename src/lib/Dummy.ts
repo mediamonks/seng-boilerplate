@@ -7,8 +7,7 @@
  * @class Dummy
  * @constructor
  */
-export default class Dummy
-{
+export default class Dummy {
 	/**
 	 * Returns a value!
 	 *
@@ -16,14 +15,10 @@ export default class Dummy
 	 * @param {string} str The input string
 	 * @return {string}
 	 */
-	public foo(str?:string):string
-	{
-		if (typeof str == 'undefined')
-		{
+	public foo(str?:string):string {
+		if (typeof str === 'undefined') {
 			return 'baz';
-		}
-		else
-		{
+		} else {
 			return str + 'bar';
 		}
 	}
