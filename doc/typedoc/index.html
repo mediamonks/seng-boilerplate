@@ -135,14 +135,13 @@ download as well:
 </code></pre>
 				<p>Use one of the following main scripts:</p>
 				<pre><code class="lang-sh">npm run build           <span class="hljs-comment"># build this project</span>
-npm run dev             <span class="hljs-comment"># run dev-watch mode, seving example/index.html in the browser</span>
+npm run dev             <span class="hljs-comment"># run dev-watch mode, serving example/index.html in the browser</span>
 npm run generate        <span class="hljs-comment"># generate all artifacts (compiles ts, webpack, docs and coverage)</span>
 npm run typings         <span class="hljs-comment"># install .d.ts dependencies (done on install)</span>
-npm run <span class="hljs-built_in">test</span>-unit       <span class="hljs-comment"># run the unit tests</span>
+npm run <span class="hljs-built_in">test</span>:unit       <span class="hljs-comment"># run the unit tests</span>
 npm run validate        <span class="hljs-comment"># runs validation scripts, including test, lint and coverage check</span>
 npm run lint            <span class="hljs-comment"># run tslint on this project</span>
 npm run doc             <span class="hljs-comment"># generate typedoc documentation</span>
-npm run typescript-npm  <span class="hljs-comment"># just compile the typescript output used in the npm module</span>
 </code></pre>
 				<p>When installing this module, it adds a pre-push hook, that runs the <code>validate</code>
 				script before committing, so you can be sure that everything checks out.</p>
