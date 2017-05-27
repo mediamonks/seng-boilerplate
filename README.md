@@ -69,7 +69,7 @@ import SengBoilerplate from 'seng-boilerplate';
 
 ## Documentation
 
-View the [generated documentation](https://rawgit.com/mediamonks/seng-boilerplate/master/docs/index.html).
+View the [generated documentation](http://mediamonks.github.io/seng-boilerplate/).
 
 
 ## Building
