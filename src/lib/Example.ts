@@ -3,8 +3,7 @@
  * @class Example
  * @constructor
  */
-export default class Example
-{
+export default class Example {
 	/**
 	 * Returns a value!
 	 *
@@ -12,14 +11,10 @@ export default class Example
 	 * @param {string} str The input string
 	 * @return {string}
      */
-	public foo(str?:string):string
-	{
-		if (typeof str == 'undefined')
-		{
+	public foo(str?:string):string {
+		if (typeof str === 'undefined') {
 			return 'baz';
-		}
-		else
-		{
+		} else {
 			return str + 'bar';
 		}
 	}

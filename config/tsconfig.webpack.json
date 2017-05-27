@@ -1,19 +1,12 @@
 {
+  "extends": "../tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es5",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "preserveConstEnums": true,
-    "noImplicitAny": false,
-    "removeComments": false,
-    "noEmitHelpers": true,
-    "sourceMap": false,
-    "inlineSourceMap": false,
-    "outDir": "./"
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
   },
-  "files": [
-    "definition/index.d.ts"
+  "include": [
+  ],
+  "exclude": [
   ]
 }

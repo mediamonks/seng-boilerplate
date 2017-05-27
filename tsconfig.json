@@ -10,11 +10,22 @@
     "removeComments": false,
     "sourceMap": false,
     "inlineSourceMap": false,
-    "outDir": "./"
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./npm",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
-  "files": [
-    "./definition/index.d.ts",
-    "./src/index.ts",
-    "./src/lib/Dummy.ts"
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./src/bundle.ts"
   ]
 }

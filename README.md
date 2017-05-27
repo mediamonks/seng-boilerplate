@@ -100,14 +100,13 @@ npm install
 Use one of the following main scripts:
 ```sh
 npm run build           # build this project
-npm run dev             # run dev-watch mode, seving example/index.html in the browser
+npm run dev             # run dev-watch mode, serving example/index.html in the browser
 npm run generate        # generate all artifacts (compiles ts, webpack, docs and coverage)
 npm run typings         # install .d.ts dependencies (done on install)
-npm run test-unit       # run the unit tests
+npm run test:unit       # run the unit tests
 npm run validate        # runs validation scripts, including test, lint and coverage check
 npm run lint            # run tslint on this project
 npm run doc             # generate typedoc documentation
-npm run typescript-npm  # just compile the typescript output used in the npm module
 ```
 
 When installing this module, it adds a pre-push hook, that runs the `validate`
