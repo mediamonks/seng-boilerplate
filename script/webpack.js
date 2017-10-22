@@ -57,12 +57,9 @@ browserMin.plugins = browserMin.plugins.concat(
 );
 
 [umd, umdMin, amd, cjs2, browser, browserMin, system].reduce(function (prev, config) {
-	console.log(config.output);
 	return prev.then(function() {
 		return new Promise(function(resolve, reject) {
 			webpack(config, function (err, stats) {
-				console.log(config);
-
 				if (err)
 				{
 					console.error('err', err);
