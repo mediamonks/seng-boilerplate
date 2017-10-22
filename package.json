@@ -8,8 +8,7 @@
     "test": "npm-run-all test:*",
     "test:unit": "karma start --single-run --browsers PhantomJS",
     "test:unit:dev": "karma start karma.conf.dev.js",
-    "validate": "npm-run-all -p validate:webpack lint test:unit -s validate:coverage",
-    "validate:webpack": "webpack-validator config/webpack.config.dist.js && webpack-validator config/webpack.config.test.js",
+    "validate": "npm-run-all -p lint test:unit -s validate:coverage",
     "validate:coverage": "istanbul check-coverage --statement 1 --branches 1 --functions 1 --lines 1",
     "lint": "npm-run-all lint:*",
     "lint:ts": "tslint -c tslint.json \"src/**/*.ts\"",
@@ -34,7 +33,6 @@
     "test:unit": "Runs unit tests with Karma in PhantomJS",
     "test:unit:dev": "Runs unit tests with Karma in PhantomJS (with the watch mode)",
     "validate": "Runs all scripts that validate if the contents of this repos is correct",
-    "validate:webpack": "Validates the webpack config file",
     "validate:coverage": "Checks if the code coverage results are above a defined minimun",
     "lint": "Placeholder for all types if linting checks",
     "lint:ts": "Lints the source files using tslint",
@@ -88,6 +86,7 @@
     "karma": "^1.7.1",
     "karma-chai": "^0.1.0",
     "karma-coverage": "1.1.1",
+    "karma-coverage-istanbul-reporter": "^1.3.0",
     "karma-mocha": "^1.1.1",
     "karma-mocha-reporter": "^2.2.0",
     "karma-phantomjs-launcher": "1.0.4",
@@ -109,8 +108,7 @@
     "typescript": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
-    "webpack-system-register": "^1.3.2",
-    "webpack-validator": "^3.0.0"
+    "webpack-system-register": "^1.3.2"
   },
   "dependencies": {
     "tslib": "^1.8.0"
