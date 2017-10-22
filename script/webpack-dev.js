@@ -1,29 +1,27 @@
-var webpack = require("webpack");
-var webpackDevServer = require('webpack-dev-server');
-var path = require('path');
-var baseConfig = require('../config/webpack.config.dist');
+const webpack = require("webpack");
+const webpackDevServer = require('webpack-dev-server');
+const path = require('path');
+const baseConfig = require('../config/webpack.config.dist');
 
-var port = 8085;
-var serverURI = `webpack-dev-server/client?http://localhost:${port}/`;
+const port = 8085;
+const serverURI = `webpack-dev-server/client?http://localhost:${port}/`;
 
-var browser = baseConfig();
-browser.output.libraryTarget = "var";
-browser.output.filename = "./dist/seng-boilerplate.js";
-browser.output.path = path.join(__dirname, '../dist');
-browser.entry = [serverURI, browser.entry];
+const webpackConfig = baseConfig;
+webpackConfig.output.libraryTarget = "var";
+webpackConfig.output.filename = "./dist/seng-boilerplate.js";
+webpackConfig.output.path = path.join(__dirname, '../dist');
+webpackConfig.entry = [serverURI, webpackConfig.entry];
+webpackConfig.devtool = 'source-map';
+webpackConfig.watch = true;
 
-browser.devtool = 'source-map';
-browser.watch = true;
-browser.progress = true;
-browser.keepalive = true;
-
-var compiler = webpack(browser);
-var server = new webpackDevServer(compiler, {
-	contentBase: "example/",
+const compiler = webpack(webpackConfig);
+const server = new webpackDevServer(compiler, {
+	contentBase: path.resolve(__dirname, '../example'),
+	open: true,
 	stats: {
 		colors: true,
-		chunks: false
-	}
+		chunks: false,
+	},
 });
 
 server.listen(port, function(err) {
