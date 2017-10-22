@@ -30,7 +30,7 @@ module.exports = function(config)
 			]
 		},
 
-		webpack: require('./config/webpack.config.test')(),
+		webpack: require('./config/webpack.config.test'),
 
 		// Make dev server silent.
 		webpackServer: { noInfo: true },
