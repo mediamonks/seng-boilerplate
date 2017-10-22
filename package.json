@@ -98,7 +98,6 @@
     "npm-run-all": "^4.1.1",
     "phantomjs-prebuilt": "^2.1.15",
     "pre-push": "^0.1.1",
-    "remap-istanbul": "^0.9.5",
     "shx": "^0.2.2",
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.3.0",
