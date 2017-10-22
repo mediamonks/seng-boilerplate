@@ -1,58 +1,36 @@
-/*eslint-disable */
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-module.exports = function()
-{
-	return {
-		resolve: {
-			extensions: ['', '.ts', '.js']
+module.exports = {
+	resolve: {
+		extensions: ['.ts', '.js']
+	},
+	entry: path.resolve(__dirname, '../src/bundle.ts'),
+	output: {
+		// in the case of a "plain global browser library", this
+		// will be used as the reference to our module that is
+		// hung off of the window object.
+		library: 'SengBoilerplate'
+	},
+	module: {
+		noParse: function(content) {
+			return /lodash/.test(content);
 		},
-
-		// entry is the "main" source file we want to include/import
-		entry: './src/bundle.ts',
-
-		// externals let you tell webpack about external dependencies
-		// that shouldn't be resolved by webpack.
-		externals: [
+		rules: [
 			{
-				// We're not only telling webpack that lodash should be an
-				// external dependency, but we're also specifying how
-				// lodash should be loaded in different scenarios
-
-				//lodash: {
-				//	root: "_",
-				//	commonjs: "lodash",
-				//	commonjs2: "lodash",
-				//	amd: "lodash"
-				//}
-			}
-		],
-
-		// output tells webpack where to put the bundle it creates
-		output: {
-			// in the case of a "plain global browser library", this
-			// will be used as the reference to our module that is
-			// hung off of the window object.
-			library: "SengBoilerplate"
-		},
-
-		module: {
-			loaders: [
-				{
-					test: /\.ts$/,
-					exclude: /node_modules/,
+				test: /\.ts$/,
+				use: {
 					loader: 'awesome-typescript-loader',
-					query: {
-						configFileName: './config/tsconfig.webpack.json'
+					options: {
+						configFileName: path.resolve(__dirname, './tsconfig.webpack.json'),
 					}
-				}
-			]
-		},
-
-		plugins: [],
-		stats: {
-			colors: true
-		}
-	};
+				},
+				exclude: /node_modules/,
+			}
+		]
+	},
+	plugins: [],
+	stats: {
+		colors: true
+	}
 };
