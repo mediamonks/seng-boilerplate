@@ -1475,35 +1475,9 @@ es6-object-assign@^1.0.3:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
 
-es6-promise@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-2.3.0.tgz#96edb9f2fdb01995822b263dd8aadab6748181bc"
-
-es6-promise@^4.0.3, es6-promise@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.1.1.tgz#8811e90915d9a0dba36274f0b242dbda78f9c92a"
-
 es6-promise@~4.0.3:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.0.5.tgz#7882f30adde5b240ccfa7f7d78c548330951ae42"
-
-es6-promisify-all@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/es6-promisify-all/-/es6-promisify-all-0.1.0.tgz#442b9a1ea8e00b0fd5b28772555058fde5e9f207"
-  dependencies:
-    es6-promisify pgaubatz/es6-promisify
-
-es6-promisify@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-5.0.0.tgz#5109d62f3e56ea967c4b63505aef08291c8a5203"
-  dependencies:
-    es6-promise "^4.0.3"
-
-es6-promisify@pgaubatz/es6-promisify:
-  version "2.0.0"
-  resolved "https://codeload.github.com/pgaubatz/es6-promisify/tar.gz/3d8966c58bace65f762b7335e99e3f43b987bce4"
-  dependencies:
-    es6-promise "^2.3.0"
 
 es6-set@~0.1.5:
   version "0.1.5"
