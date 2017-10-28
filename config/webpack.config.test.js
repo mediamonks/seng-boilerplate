@@ -36,7 +36,7 @@ module.exports = {
 				use: {
 					loader: 'awesome-typescript-loader',
 					options: {
-						configFileName: path.resolve(__dirname, '../config/tsconfig.webpack.json'),
+						configFileName: path.resolve(__dirname, '../config/tsconfig.test.json'),
 					}
 				},
 			},
