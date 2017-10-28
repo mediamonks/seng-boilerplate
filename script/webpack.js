@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const WebpackSystemRegister = require('webpack-system-register');
-const Promise = require('es6-promise');
 const _ = require('lodash');
 
 const uglifyPluginSetting = new webpack.optimize.UglifyJsPlugin({
