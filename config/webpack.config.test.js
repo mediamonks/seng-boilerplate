@@ -14,9 +14,8 @@ module.exports = {
 		/**
 		 * Note: Ignored files should not have calls to import, require, define or any other importing mechanism.
 		 *
-		 * PhantomJS could stall if an older lodash version is imported (which does requires). This could happen
-		 * when a outdated node package is used. In case of failing test remove the conflicting library from noParse
-		 * key.
+		 * This can cause issues when a outdated node package is used. In case of failing test/build remove the
+		 * conflicting library from the noParse key.
  		 */
 		noParse: function(content) {
 			return /lodash/.test(content);
@@ -53,10 +52,10 @@ module.exports = {
 					/Spec\.ts$/
 				],
 				enforce: 'post',
-			}
-		]
+			},
+		],
 	},
 	stats: {
-		colors: true
-	}
+		colors: true,
+	},
 };
