@@ -17,7 +17,7 @@ module.exports = {
 		/**
 		 * Note: Ignored files should not have calls to import, require, define or any other importing mechanism.
 		 *
-		 * This can cause issues when a outdated node package is used. In case of failing test/build remove the
+		 * This can cause issues when an outdated node package is used. In case of failing test/build remove the
 		 * conflicting library from the noParse key.
 		 */
 		noParse: function (content) {
