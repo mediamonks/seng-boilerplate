@@ -3,7 +3,7 @@
 
 const path = require('path');
 const archiver = require('archiver');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 const { name, version } = require('../package.json');
 const src = path.resolve(__dirname, '../dist');
@@ -20,21 +20,23 @@ const createArchive = (archive, src, compressedFile) =>
 		archive.finalize();
 	});
 
-const createDistTar = () => createArchive(
+const createTarArchive = (archiveSrc, archiveDest) => createArchive(
 	archiver('tar', { gzip: true, gzipOptions: { level: 9 } }),
-	src,
-	`${dst}.tar.gz`
+	archiveSrc,
+	archiveDest
 );
 
-const createDistZip = () => createArchive(
+const createZipArchive = (archiveSrc, archiveDest) => createArchive(
 	archiver('zip', { level: 9 }),
-	src,
-	`${dst}.zip`
+	archiveSrc,
+	archiveDest
 );
 
 Promise.resolve()
-	.then(createDistTar)
-	.then(createDistZip)
+	.then(() => createTarArchive(src, `${dst}.tar.gz`))
+	.then(() => createZipArchive(src, `${dst}.zip`))
+	.then(() => createZipArchive(path.join(src, 'es6'), path.join(src, `${name}-${version}-es6.zip`)))
+	.then(() => fs.remove(path.join(src, 'es6')))
 	.catch(err =>
 	{
 		console.log(err);
