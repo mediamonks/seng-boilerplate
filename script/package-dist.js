@@ -2,78 +2,41 @@
 'use strict';
 
 const path = require('path');
-const promise = require('es6-promise');
-const promisify = require('es6-promisify');
-const promisifyAll = require('es6-promisify-all');
-const fs = promisifyAll(require('fs-extra'));
 const archiver = require('archiver');
+const fs = require('fs-extra');
 
-const pkg = require('../package.json');
-const version = pkg.version;
-const name = pkg.name;
+const { name, version } = require('../package.json');
+const src = path.resolve(__dirname, '../dist');
+const dst = path.join(path.resolve(__dirname, '..'), `${name}-${version}`);
 
-const from = path.resolve(__dirname, '../dist');
-const tmp = path.resolve(__dirname, '../_dist');
-const to = path.join(path.resolve(__dirname, '../dist'), name, version);
-const distName = path.join(path.resolve(__dirname, '..'), name + '-' + version);
+const createArchive = (archive, src, compressedFile) =>
+	new Promise((resolve, reject) => {
+		const output = fs.createWriteStream(compressedFile);
+		output.on('close', () => resolve());
 
-const createArchive = (archive, src, dst) =>
-{
-	return new Promise((resolve, reject) =>
-	{
-		const output = fs.createWriteStream(dst);
-
-		output.on('close', () =>
-		{
-			resolve();
-		});
-
-		archive.on('error', (err) =>
-		{
-			reject(err);
-		});
-
+		archive.on('error', (err) => reject(err));
 		archive.pipe(output);
-
-		archive
-			.bulk([
-				{ expand: true, cwd: src, src: ['**/*.*'] }
-			])
-			.finalize();
-	})
-};
-
-const createDistTar = () =>
-{
-	const archive = archiver('tar', {
-		gzip: true,
-		gzipOptions: {
-			level: 1
-		}
+		archive.directory(src, '');
+		archive.finalize();
 	});
 
-	return createArchive(archive, to, distName + '.tar.gz');
-};
+const createTarArchive = (archiveSrc, archiveDest) => createArchive(
+	archiver('tar', { gzip: true, gzipOptions: { level: 9 } }),
+	archiveSrc,
+	archiveDest
+);
 
-const createDistZip = () =>
-{
-	const archive = archiver('zip', {});
-	return createArchive(archive, to, distName + '.zip');
-};
-
-const createEs6Zip = () =>
-{
-	const archive = archiver('zip', {});
-	return createArchive(archive, path.join(to, 'es6'), path.join(to, name + '-es6.zip'));
-};
+const createZipArchive = (archiveSrc, archiveDest) => createArchive(
+	archiver('zip', { level: 9 }),
+	archiveSrc,
+	archiveDest
+);
 
 Promise.resolve()
-	.then(() => fs.moveAsync(from, tmp))
-	.then(() => fs.moveAsync(tmp, to))
-	.then(createDistTar)
-	.then(createDistZip)
-	.then(createEs6Zip)
-	.then(() => fs.removeAsync(path.join(to, 'es6')))
+	.then(() => createTarArchive(src, `${dst}.tar.gz`))
+	.then(() => createZipArchive(src, `${dst}.zip`))
+	.then(() => createZipArchive(path.join(src, 'es6'), path.join(src, `${name}-${version}-es6.zip`)))
+	.then(() => fs.remove(path.join(src, 'es6')))
 	.catch(err =>
 	{
 		console.log(err);

@@ -4,6 +4,8 @@
   "rules": {
     "no-debugger": 2,
     "no-console": 1,
+    "no-boolean-literal-compare": false,
+    "strict-boolean-expressions": false,
     "prefer-array-literal": [ true, { "allow-type-parameters": true } ],
     "variable-name": [ true, "allow-pascal-case" ],
     "indent": [true, "tabs"],
