@@ -1,31 +1,30 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es5",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "preserveConstEnums": true,
-    "noImplicitAny": false,
-    "removeComments": false,
-    "sourceMap": false,
-    "inlineSourceMap": false,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src/",
+    "rootDir": "./src/",
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "strictNullChecks": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./npm",
-    "typeRoots": [
-      "./node_modules/@types"
+    "pretty": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "sourceMap": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2017"
     ]
   },
   "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "./src/bundle.ts"
+    "./src/**/*",
+    "./types/**/*.d.ts"
   ]
 }

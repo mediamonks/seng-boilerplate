@@ -1,26 +1,23 @@
 language: node_js
 
+cache: yarn
+
 node_js:
   - 'stable'
-  - '4'
-  - '5'
+  - '6'
+  - '8'
 
 sudo: false
 
 before_install:
-  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
-  - npm install -g codeclimate-test-reporter
+  - yarn global add codeclimate-test-reporter
 
 script:
-  - npm run build
-  - npm run validate
+  - yarn test
 
 after_script:
   - codeclimate-test-reporter < coverage/lcov.info
   - node_modules/.bin/coveralls < coverage/lcov.info
-
-before_deploy:
-  - npm run build:dist && node ./script/package-dist.js
 
 deploy:
   - provider: npm
@@ -29,33 +26,7 @@ deploy:
       secure: 'LJXHK/prWdaAKk7hlh5mN0I/owaatGLW22T877KQYlbMzNFM0jPSxMhaTNLHdOFUcez7P/EXjNFeGIhDeh7DxQliw6sJ5CLGUqlKSAoVnoGmA0HFVnD2PSmOFGzUuLgNOQ76WweUK9cU1uvx49zoiKUmyGWYSSeJhQGSgLCY6gbsAxYEJzhLVDYP1aEPJYuvjGuRIrcJ4R9pTmiJOMyjsMxRv+KMKiaV7d9MNMSgUl4n3JAfZ41+D4qFyPHbUAumPPs0tPwgD7N6lptQdkNFiZvB2cVvTFytny8BcC53/K7z+8Hy4+aB+4o7JwY2RX+A9Ys4zif6MTaoySAbpjweAIdmEr2YSrItr9LNxlqRdryknoDLvn63dxbQyJf1tsvT/KVabK48pPK4qEDHw0e0DZnsPXr6Me5mO3553RNyS0NnPP+qkeybqpx6Tbl/Akz0UX8bUVAWX3+/1bSONghSRyYAF47ktJjeBQIMMTxIgR/6gKJmVDrieC+bEHUCCmg9uscrS3iUG7yOR5PW7sCNYrOewPyZ1xO36tJ03FUrwIl08jV659yYGpiM4T386xKZSpKV4aUWjj/y3WockNTmEey07Lk5QO0O5aLS1N7fPyP07lgGNl6uFny8B6c/vH6F+MTtE3WISRytVK9hefdWMxMbKSFalI8cOAnzmkXx+vU='
     on:
       tags: true
-      node: '4'
-    skip_cleanup: true
-
-  - provider: s3
-    access_key_id:
-      secure: 'BV9B80rsAWYaQkF23vQIT9o7536RCG9SYHUKff/aTlgRHnA9FqbBDork2CZ/u2FZO1XaX8CIDjRolLAFqCYfzO4kSufUdMEhkYtx+j0AX27lszVr4Xw0JZqIgZ6EfQq6rCs+Rq4nRR/qIjaifpxpXHdtbte2KTAhdLlAWgJM0JB8DZl8JGxwpByRxcRw+aJw1STqF4yCV7gV5R7LxBrlyFnOEgvTGR80L+d8twzIAoa3IRLYz8cW7SHLffaRVJLr6I0/Jcw8+LryXKHPkQd+/qrqOAtwZiUSlEmp9d+drqIHTre2nvN4gXzVas9Qg00aKStE3qnJJ9um0UiaGb0yQqXjNlTYLlwNZtT62DMI6UFIEs+/79WLWQ6hgvQS8IJ9wjzsB1is/Ml1OqvKyNOGaQp1bdJBlgmPUOcd9OCLLK7DcG22b2Ic9vMFEy5PAmQIZeYf5j6rRvXqy8eYJJt0TOrS1m024Y5Zau1WcrlVc/RM91QOlw3UOGZ6be5VRQRZ3tFhh+Wx1618x8UNVckiWZ9iqhtW90c0E6kZJDR7n+byKrxUQeyeGrJxpC8U5+ZuzfDgB6wcJ8SmNL1nR81L/jXx/TvvK7x/rEZgWw8Ra/8yB9W54Zb35frRCtF6XE907fIBOS1fMJ8sjNX8T0mXg3RdpWei8ZZUX9aadscKQDc='
-    secret_access_key:
-      secure: 'DRV5VfnUuuFjh5ZCAqHU2U8fqu+wnWeGxOeCUenC/4Zvt5w6h27c6p/SbHXtslN1PtotLiMrkb5T8fx0WmVVK51LeTaDeIa91XgKamemXBzrdNlfsYa2Iiag6m0aLqzVsM73TvLQaFR0YUy933MidZTiX/y1hy6rVOQT8OPRqnEog7gSy4IrlGe8hUyCqrPeQmzWuIj+UYDsJbkJ0lBGyJDf5s0XV4KjmT/s79v/McRS/9drlG0n0/v7uHdoMEXqTFeqQlwZuLwVsNdX1YT57fM4ES4U/ECPHPtcbAY6qJ3WS1WSLKXbLqNocNxTd3Xp6du6hpHsecvAWTvRwzI3YQasqtmZKDNLwkIw8H9YmhIP6sjnexWYZVbJDZFkBykvXCXj/NvBmH8a7yYc3uLAtULe5mSULz7fi2WvfYYwDz8ulDYYKpH4yt3D+4OHrWXQMiq8o6RogSV9jcXGb/aIFIBTArwEMlnBVEcu++wc9ORFi44AYRRe3dImD//cGGXn88Of/djKK1r+KquwUC631KHIi7Yif1RboDlwV7mBTM5f1DfhFad79Xmq/xBNbG2PKp6O6sQ93/pAAN80cVC9N0pI9nV4pjYv1XF8AhDgRjHhVV05K9n8RJq4mlA3Wwnswh+nwrDhpk9u3d52uATZFuRP3MGeCzJLOvZbX6jqhzw='
-    bucket: "mediamonks-development"
-    local_dir: 'dist'
-    upload-dir: 'seng/libs'
-    on:
-      tags: true
-      node: '4'
-    skip_cleanup: true
-    region: eu-west-1
-
-  - provider: releases
-    api_key:
-      secure: 'o+3Rg9e82piK55Jcc7eBI82xG1A29K7G4dNq83wBOVYmt3cu7FaiTCSkSXba5rfr39ILKN+YFHv79PhJtrJd9uD+y3WRm/dsmnzCfNFNnkZzwv3GkPxF5k9+9FGtf/MPeHqaGTcLKbZuz/9tsexkvTJndEbLphOSyFYiH3k0rcRnW0V7T8flR7Wp4zBYr3oFp9KDSx5tRsEdn/TIyJThH7KyOdW/6rcmQ/Yal5Oy37A12XTEr1KOJXa5NtzLTLGUzZYZp0Q3pTE+PNu/YBuYDrJCuK52Os2zcEvxIqY0w7RmD/dXaOKhGsnZ4xgCNGWzUVFi+fyV8Zgq06OYdYKG+1SwE5T2B8oL6hzQ86unND4MCBTe7LNt416GEfsKA+lm+9knflnOrbR4KyQTYDFPgLUp66BkCB2OBQL6ypWNMnuyhXTrc1T4cFsfCFJPpDQRkseKiYWuAL8M5FBCW43C1tU1o0g7/TGrz9Xmku2+W7iGU1nSqOoWWeZuISU0Ps8Cg4RoKcM2UHVeH42u67D2KLwl2pdL8/H4mRCSaITMAEHFcsQ8nye8iEYrTJqP+LLBzfuCjtZtgliWRi1suE7/0AYGMVxFg83eeJfpLtaLqhcNdSnf5duOP8TJW/i5PJQiGbN0OFuJkzBbegpV7PtEyCjFG36/PEkBwsY1RaUDFOs='
-    file:
-      - "seng-*.zip"
-      - "seng-*.tar.gz"
-    file_glob: true
-    on:
-      tags: true
-      node: '4'
+      node: '8'
     skip_cleanup: true
 
 addons:

@@ -1,17 +1,14 @@
+# seng-boilerplate
+
+Add a description here...
+
 [![Travis](https://img.shields.io/travis/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-boilerplate)
 [![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate)
 [![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master)
 [![npm](https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 [![npm](https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 
-# seng-boilerplate
-
-Add a description here...
-
-
 ## Installation
-
-### yarn / npm
 
 ```sh
 yarn add seng-boilerplate
@@ -21,47 +18,8 @@ yarn add seng-boilerplate
 npm i -S seng-boilerplate
 ```
 
-### other
 
-We also have browser, amd, commonjs, umd, systemjs and es6 versions of
-this module available attached to the [Github Releases](https://github.com/mediamonks/seng-boilerplate/releases).
-
-<!---
-
-Note: The below cannot be used yet, as there is no way to link to a
-specific version yet without updating this readme manually after each
-new version.
-
-
-### browser
-
-```html
-<script src="http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.min.js"></script>
-```
-```js
-console.log(window.SengBoilerplate)
-```
-
-### other
-
-Besides the browser version, there are other versions available for
-download as well:
-
-- [browser](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.min.js))
-- [umd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate.js) (and [minified](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-umd.min.js))
-- [amd](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-amd.js)
-- [commonjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-commonjs.js)
-- [systemjs](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-system.js)
-- [es6](http://mediamonks-development.s3.amazonaws.com/seng/libs/seng-boilerplate/1.2.0/seng-boilerplate-es6.zip)
-
--->
-
-### manual
-
-Check the **build** section below to see your you can build for all the
-targets yourself.
-
-## Usage
+## Basic Usage
 
 ```ts
 import SengBoilerplate from 'seng-boilerplate';
@@ -98,37 +56,17 @@ yarn
 
 Use one of the following main scripts:
 ```sh
-yarn build           # build this project
-yarn dev             # run dev-watch mode, serving example/index.html in the browser
-yarn generate        # generate all artifacts (compiles ts, webpack, docs and coverage)
-yarn typings         # install .d.ts dependencies (done on install)
-yarn test:unit       # run the unit tests
-yarn validate        # runs validation scripts, including test, lint and coverage check
-yarn lint            # run tslint on this project
-yarn doc             # generate typedoc documentation
+yarn build            # build this project
+yarn dev              # run compilers in watch mode, both for babel and typescript
+yarn test             # run the unit tests incl coverage
+yarn test:dev         # run the unit tests in watch mode
+yarn lint             # run eslint and tslint on this project
+yarn doc              # generate typedoc documentation
 ```
 
-When installing this module, it adds a pre-push hook, that runs the `validate`
-script before committing, so you can be sure that everything checks out.
+When installing this module, it adds a pre-commit hook, that runs lint and prettier commands
+before committing, so you can be sure that everything checks out.
 
-If you want to create the distribution files yourself, you can run the
-`build-dist` script, and the following files will get generated in the
-`dist` folder:
-
-- **/dist/seng-boilerplate.js**: bundled with webpack, can be loaded from
-	a script tag, available as `window.SengBoilerplate`
-- **/dist/seng-boilerplate.min.js**: same as above, but minified
-- **/dist/seng-boilerplate-amd.js**: bundled with webpack, can be used
-	with e.g. requirejs
-- **/dist/seng-boilerplate-commonjs.js**: bundled with webpack, can be
-	used in systems that support commonjs, but you should just use npm
-- **/dist/seng-boilerplate-umd.js**: bundled with webpack, works in the
-	browser, with requirejs, and in a commonjs system
-- **/dist/seng-boilerplate-umd.min.js**: same as above, but minified
-- **/dist/seng-boilerplate-system.js**: bundled with typescript, can be
-	used in systems	that support systemjs
-- **/dist/seng-boilerplate-es6.zip**: transpiled with typescript, only
-	types are removed from the source files
 
 ## Contribute
 
@@ -157,31 +95,30 @@ View [AUTHORS.md](./AUTHORS.md)
 ### Folders
 
 This boilerplate contains the following folders:
-* **/config** - Contains the config files for karma and webpack
 * **/coverage** - Contains the generated test code coverage, is sent to Code
-Climage and Coveral.io.
-* **/dist** - Contains the compiled code in different forms for manual usage.
+Climate and Coveral.io.
 * **/docs** - Contains the generated documentation by typedoc.
-* **/example** - Can contain additional examples on how to use this module.
 * **/lib** - Contains the built code from `src/lib`, will be published to npm.
 * **/node_modules** - Contains the node modules generated by running `yarn`.
-* **/script** - Contains scripts being called from npm scripts.
 * **/src** - Contains the source code.
 * **/test** - Contains the tests.
-* **/typings** - Contains the .d.ts files generated by running `typings i`.
 * **/vendor** - Can contain 3rd party code used in this project, when not
 available on npm.
 
 ### Files
 
 This boilerplate contains the following files:
-* **/config/karma.conf.js** - Configuration for Karma test runner.
-* **/config/webpack.conf.js** - Configuration for Webpack builds.
-* **/script/webpack.js** - Creates all the different webpack dist builds.
+* **.babelrc** - Contains babel configuration.
 * **.codeclimate.yml** - The Code Climate configuration for this project.
 * **.editorconfig** - Defines general formatting rules.
+* **.eslintignore** - Lists patterns that should be ignored when running eslint.
+* **.eslintrc.js** - Contains eslint configuration.
 * **.gitignore** - These files should not end up in git.
 * **.npmignore** - These files should not end up in npm.
+* **.nvmrc** - Contains nodejs version to build this project with.
+* **.nycrc** - Contains nyc code coverage configuration.
+* **.prettierignore** - Lists patterns that should be ignored when running prettier.
+* **.prettierrc** - Contains prettier formatting configuration.
 * **.travis.yml** - Configuration for Travis CI.
 * **AUTHORS.md** - Contains a list of all the authors that worked on this module.
 * **CONTRIBUTING.md** - Contains information on how to contribute on this project.
@@ -193,26 +130,10 @@ Will be published to npm.
 * **package.json** - To list the npm package information, all the dependencies,
 and contains all the scripts that can be run.
 * **README.MD** - This file, remove the about section when cloning this boilerplate.
+* **tsconfig.build.json** - The TypeScript configuration file for building definitions.
 * **tsconfig.json** - The TypeScript configuration file for this project.
-* **/test/tsconfig.json** - The TypeScript configuration file for the tests.
 * **tslint.json** - The linting rules for our TypeScript code.
-* **typings.json** - The .d.ts dependencies for this project.
-
-### TypeScript
-
-Todo: describe TypeScript configuration and usage.
-
-### Karma
-
-Todo: describe Karma configuration and usage.
-
-### TSLint
-
-Todo: describe TSLint configuration and usage.
-
-### TypeDoc
-
-Todo: describe TypeDoc configuration and usage.
+* **yarn.lock** - Yarn lockfile to freeze module versions.
 
 ### Travis
 
