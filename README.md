@@ -156,33 +156,20 @@ of multiple sections.
     when it processes some coverage results.
 3.  It can do a [npm deploy](https://docs.travis-ci.com/user/deployment/npm),
     telling it to keep the generated artifacts and only publish when run
-    on node 4 and when a tag was committed. It also contains the email
+    on node 8 and when a tag was committed. It also contains the email
     address and api key of the npm user.
 4.  Code Climate has a [travis plugin](https://docs.travis-ci.com/user/code-climate/)
     that automatically uploads the code coverage results.
 
-Because we want to keep the npm api key secret, we generate a secure
-token with the [Travis Client](https://github.com/travis-ci/travis.rb),
-a CLI written in ruby.
+Because we want to keep the npm api key secret, we add the token to the Travis Repo settings
+where it will be stored secure:
+https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings
 
 Before we can do this, we must make sure that the repository is added
 to Travis, because Travis needs the repository owner/name info to make
 sure the encrypted values only work for that repository.
 
-1.  First you need to [login](https://github.com/travis-ci/travis.rb#login)
-    with your travis account:
-
-    ```sh
-    $ travis login
-    ```
-
-    To verify that you are logged in correctly you can check:
-
-    ```sh
-    $ travis whoami
-    ```
-
-2.  Then make sure you are logged in to your npm account with the
+1.  Then make sure you are logged in to your npm account with the
     [adduser](https://docs.npmjs.com/cli/adduser) command:
 
     ```sh
@@ -195,45 +182,11 @@ sure the encrypted values only work for that repository.
     $ npm whoami
     ```
 
-3.  Now we need to grab your auth token so we can encrypt it:
+3.  Now we need to [create a new token](https://docs.npmjs.com/getting-started/working_with_tokens):
 
     ```sh
-    $ cat ~/.npmrc
-
-    # outputs:
-    //registry.npmjs.org/:_authToken=<your_auth_token>
+    npm token create
     ```
-
-4.  Then let's encrypt that token using the travis [encrypt](https://github.com/travis-ci/travis.rb#encrypt)
-    command:
-
-    ```sh
-    $ travis encrypt <your_auth_token>
-    Detected repository as mediamonks/seng-boilerplate, is this correct? |yes|
-    Please add the following to your .travis.yml file:
-
-      secure: "YcN...Zb="
-    ```
-
-    Now copy that last line, paste it into your `.travis.yml`, and make
-    sure it looks something like this:
-
-    ```yml
-    deploy:
-      provider: npm
-      email: "john@doe.com"
-      api_key:
-        secure: "YcN...Zb="
-    ```
-
-### Code Climate
-
-Todo: describe Code Climate configuration and usage.
-
-### Coverall
-
-Todo: describe Coverall configuration and usage.
-
-### NPM
-
-Todo: describe NPM configuration and usage.
+    
+    Copy the token value from the output to the Travis Environment Variable settings, and
+    add it with the name `NPM_TOKEN`.
