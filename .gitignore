@@ -14,4 +14,4 @@ node_modules/
 ## only ignore in git
 /lib
 /index.js
-/index.d.ts
+/declarations

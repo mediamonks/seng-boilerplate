@@ -4,6 +4,6 @@
     "allowJs": false,
     "outDir": "tmp",
     "declaration": true,
-    "declarationDir": "./"
+    "declarationDir": "./declarations"
   }
 }
