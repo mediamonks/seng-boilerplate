@@ -4,6 +4,7 @@
     "allowJs": false,
     "outDir": "tmp",
     "declaration": true,
-    "declarationDir": "./declarations"
-  }
+    "declarationDir": "./"
+  },
+  "exclude": []
 }

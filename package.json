@@ -3,7 +3,7 @@
   "version": "1.4.0",
   "description": "Boilerplate and example project for all Seng projects",
   "main": "./index.js",
-  "types": "./declarations/index.d.ts",
+  "types": "./index.d.ts",
   "scripts": {
     "prepublishOnly": "npm-run-all -s validate build",
     "validate": "npm-run-all -p lint test",
