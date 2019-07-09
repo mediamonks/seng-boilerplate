@@ -15,6 +15,6 @@ export default class Example {
     if (typeof str === 'undefined') {
       return 'baz';
     }
-    return str + 'bar';
+    return `${str}bar`;
   }
 }
