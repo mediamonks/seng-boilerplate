@@ -72,38 +72,31 @@
 					<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000" alt="npm"></a>
 				<a href="https://www.npmjs.com/package/seng-boilerplate"><img src="https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000" alt="npm"></a></p>
 				<h2 id="installation">Installation</h2>
-				<pre><code class="lang-sh">yarn add seng-boilerplate
-</code></pre>
-				<pre><code class="lang-sh">npm i -S seng-boilerplate
-</code></pre>
+				<pre><code class="language-sh">yarn add seng-boilerplate</code></pre>
+				<pre><code class="language-sh">npm i -S seng-boilerplate</code></pre>
 				<h2 id="basic-usage">Basic Usage</h2>
-				<pre><code class="lang-ts"><span class="hljs-keyword">import</span> SengBoilerplate <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-boilerplate'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> SengBoilerplate <span class="hljs-keyword">from</span> <span class="hljs-string">'seng-boilerplate'</span>;
 <span class="hljs-comment">// import SengBoilerplate from 'seng-boilerplate/lib/classname';</span>
 
-<span class="hljs-comment">// do something with SengBoilerplate</span>
-</code></pre>
+<span class="hljs-comment">// do something with SengBoilerplate</span></code></pre>
 				<h2 id="documentation">Documentation</h2>
 				<p>View the <a href="http://mediamonks.github.io/seng-boilerplate/">generated documentation</a>.</p>
 				<h2 id="building">Building</h2>
 				<p>In order to build seng-boilerplate, ensure that you have <a href="http://git-scm.com/downloads">Git</a>
 				and <a href="http://nodejs.org/">Node.js</a> installed.</p>
 				<p>Clone a copy of the repo:</p>
-				<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://github.com/mediamonks/seng-boilerplate.git
-</code></pre>
+				<pre><code class="language-sh">git <span class="hljs-built_in">clone</span> https://github.com/mediamonks/seng-boilerplate.git</code></pre>
 				<p>Change to the seng-boilerplate directory:</p>
-				<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> seng-boilerplate
-</code></pre>
+				<pre><code class="language-sh"><span class="hljs-built_in">cd</span> seng-boilerplate</code></pre>
 				<p>Install dev dependencies:</p>
-				<pre><code class="lang-sh">yarn
-</code></pre>
+				<pre><code class="language-sh">yarn</code></pre>
 				<p>Use one of the following main scripts:</p>
-				<pre><code class="lang-sh">yarn build            <span class="hljs-comment"># build this project</span>
+				<pre><code class="language-sh">yarn build            <span class="hljs-comment"># build this project</span>
 yarn dev              <span class="hljs-comment"># run compilers in watch mode, both for babel and typescript</span>
 yarn <span class="hljs-built_in">test</span>             <span class="hljs-comment"># run the unit tests incl coverage</span>
 yarn <span class="hljs-built_in">test</span>:dev         <span class="hljs-comment"># run the unit tests in watch mode</span>
 yarn lint             <span class="hljs-comment"># run eslint and tslint on this project</span>
-yarn doc              <span class="hljs-comment"># generate typedoc documentation</span>
-</code></pre>
+yarn doc              <span class="hljs-comment"># generate typedoc documentation</span></code></pre>
 				<p>When installing this module, it adds a pre-commit hook, that runs lint and prettier commands
 				before committing, so you can be sure that everything checks out.</p>
 				<h2 id="contribute">Contribute</h2>
@@ -132,10 +125,17 @@ yarn doc              <span class="hljs-comment"># generate typedoc documentatio
 				<h3 id="files">Files</h3>
 				<p>This boilerplate contains the following files:</p>
 				<ul>
+					<li><strong>.babelrc</strong> - Contains babel configuration.</li>
 					<li><strong>.codeclimate.yml</strong> - The Code Climate configuration for this project.</li>
 					<li><strong>.editorconfig</strong> - Defines general formatting rules.</li>
+					<li><strong>.eslintignore</strong> - Lists patterns that should be ignored when running eslint.</li>
+					<li><strong>.eslintrc.js</strong> - Contains eslint configuration.</li>
 					<li><strong>.gitignore</strong> - These files should not end up in git.</li>
 					<li><strong>.npmignore</strong> - These files should not end up in npm.</li>
+					<li><strong>.nvmrc</strong> - Contains nodejs version to build this project with.</li>
+					<li><strong>.nycrc</strong> - Contains nyc code coverage configuration.</li>
+					<li><strong>.prettierignore</strong> - Lists patterns that should be ignored when running prettier.</li>
+					<li><strong>.prettierrc</strong> - Contains prettier formatting configuration.</li>
 					<li><strong>.travis.yml</strong> - Configuration for Travis CI.</li>
 					<li><strong>AUTHORS.md</strong> - Contains a list of all the authors that worked on this module.</li>
 					<li><strong>CONTRIBUTING.md</strong> - Contains information on how to contribute on this project.</li>
@@ -147,19 +147,11 @@ yarn doc              <span class="hljs-comment"># generate typedoc documentatio
 					<li><strong>package.json</strong> - To list the npm package information, all the dependencies,
 					and contains all the scripts that can be run.</li>
 					<li><strong>README.MD</strong> - This file, remove the about section when cloning this boilerplate.</li>
+					<li><strong>tsconfig.build.json</strong> - The TypeScript configuration file for building definitions.</li>
 					<li><strong>tsconfig.json</strong> - The TypeScript configuration file for this project.</li>
-					<li><strong>/test/tsconfig.json</strong> - The TypeScript configuration file for the tests.</li>
 					<li><strong>tslint.json</strong> - The linting rules for our TypeScript code.</li>
-					<li><strong>typings.json</strong> - The .d.ts dependencies for this project.</li>
+					<li><strong>yarn.lock</strong> - Yarn lockfile to freeze module versions.</li>
 				</ul>
-				<h3 id="typescript">TypeScript</h3>
-				<p>Todo: describe TypeScript configuration and usage.</p>
-				<h3 id="karma">Karma</h3>
-				<p>Todo: describe Karma configuration and usage.</p>
-				<h3 id="tslint">TSLint</h3>
-				<p>Todo: describe TSLint configuration and usage.</p>
-				<h3 id="typedoc">TypeDoc</h3>
-				<p>Todo: describe TypeDoc configuration and usage.</p>
 				<h3 id="travis">Travis</h3>
 				<p>This project uses <a href="https://travis-ci.org">Travis</a> to build, test and
 				publish its code to npm. Travis is free for public Github repositories.</p>
@@ -177,65 +169,30 @@ yarn doc              <span class="hljs-comment"># generate typedoc documentatio
 					when it processes some coverage results.</li>
 					<li>It can do a <a href="https://docs.travis-ci.com/user/deployment/npm">npm deploy</a>,
 						telling it to keep the generated artifacts and only publish when run
-						on node 4 and when a tag was committed. It also contains the email
+						on node 8 and when a tag was committed. It also contains the email
 					address and api key of the npm user.</li>
 					<li>Code Climate has a <a href="https://docs.travis-ci.com/user/code-climate/">travis plugin</a>
 					that automatically uploads the code coverage results.</li>
 				</ol>
-				<p>Because we want to keep the npm api key secret, we generate a secure
-					token with the <a href="https://github.com/travis-ci/travis.rb">Travis Client</a>,
-				a CLI written in ruby.</p>
+				<p>Because we want to keep the npm api key secret, we add the token to the Travis Repo settings
+					where it will be stored secure:
+				<a href="https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings">https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings</a></p>
 				<p>Before we can do this, we must make sure that the repository is added
 					to Travis, because Travis needs the repository owner/name info to make
 				sure the encrypted values only work for that repository.</p>
 				<ol>
-					<li><p>First you need to <a href="https://github.com/travis-ci/travis.rb#login">login</a>
-						with your travis account:</p>
-						<pre><code class="lang-sh">$ travis login
-</code></pre>
-						<p>To verify that you are logged in correctly you can check:</p>
-						<pre><code class="lang-sh">$ travis whoami
-</code></pre>
-					</li>
 					<li><p>Then make sure you are logged in to your npm account with the
 						<a href="https://docs.npmjs.com/cli/adduser">adduser</a> command:</p>
-						<pre><code class="lang-sh">$ npm adduser
-</code></pre>
+						<pre><code class="language-sh">$ npm adduser</code></pre>
 						<p>To verify that you are logged in correctly you can check:</p>
-						<pre><code class="lang-sh">$ npm whoami
-</code></pre>
+						<pre><code class="language-sh">$ npm whoami</code></pre>
 					</li>
-					<li><p>Now we need to grab your auth token so we can encrypt it:</p>
-						<pre><code class="lang-sh">$ cat ~/.npmrc
-
-<span class="hljs-comment"># outputs:</span>
-//registry.npmjs.org/:_authToken=&lt;your_auth_token&gt;
-</code></pre>
-					</li>
-					<li><p>Then let&#39;s encrypt that token using the travis <a href="https://github.com/travis-ci/travis.rb#encrypt">encrypt</a>
-						command:</p>
-						<pre><code class="lang-sh">$ travis encrypt &lt;your_auth_token&gt;
-Detected repository as mediamonks/seng-boilerplate, is this correct? |yes|
-Please add the following to your .travis.yml file:
-
-  secure: <span class="hljs-string">"YcN...Zb="</span>
-</code></pre>
-						<p>Now copy that last line, paste it into your <code>.travis.yml</code>, and make
-						sure it looks something like this:</p>
-						<pre><code class="lang-yml"><span class="hljs-attr">deploy:</span>
-<span class="hljs-attr">  provider:</span> <span class="hljs-string">npm</span>
-<span class="hljs-attr">  email:</span> <span class="hljs-string">"john@doe.com"</span>
-<span class="hljs-attr">  api_key:</span>
-<span class="hljs-attr">    secure:</span> <span class="hljs-string">"YcN...Zb="</span>
-</code></pre>
+					<li><p>Now we need to <a href="https://docs.npmjs.com/getting-started/working_with_tokens">create a new token</a>:</p>
+						<pre><code class="language-sh">npm token create</code></pre>
+						<p>Copy the token value from the output to the Travis Environment Variable settings, and
+						add it with the name <code>NPM_TOKEN</code>.</p>
 					</li>
 				</ol>
-				<h3 id="code-climate">Code Climate</h3>
-				<p>Todo: describe Code Climate configuration and usage.</p>
-				<h3 id="coverall">Coverall</h3>
-				<p>Todo: describe Coverall configuration and usage.</p>
-				<h3 id="npm">NPM</h3>
-				<p>Todo: describe NPM configuration and usage.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
