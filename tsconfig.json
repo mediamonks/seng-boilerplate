@@ -15,7 +15,7 @@
     "noUnusedParameters": true,
     "pretty": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
+    "strict": true,
     "sourceMap": true,
     "lib": [
       "DOM",

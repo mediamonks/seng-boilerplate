@@ -4,7 +4,6 @@ cache: yarn
 
 node_js:
   - 'stable'
-  - '6'
   - '8'
   - '10'
 

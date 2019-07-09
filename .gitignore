@@ -11,6 +11,7 @@ node_modules/
 /coverage/
 /.nyc_output/
 /tmp/
+/decl/
 
 ## only ignore in git
 /lib
