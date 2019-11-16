@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "allowJs": false,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src/",
-    "rootDir": "./src/",
     "forceConsistentCasingInFileNames": true,
     "module": "es2015",
     "moduleResolution": "node",
@@ -15,16 +13,11 @@
     "noUnusedParameters": true,
     "pretty": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strictNullChecks": false,
     "sourceMap": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2017"
-    ]
+    "lib": ["DOM", "DOM.Iterable", "ES2017"],
+    "declaration": true,
+    "declarationDir": "./decl"
   },
-  "include": [
-    "./src/**/*",
-    "./types/**/*.d.ts"
-  ]
+  "include": ["./src/**/*.ts"]
 }

@@ -1,11 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "allowJs": false,
-    "outDir": "tmp",
-    "declaration": true,
-    "declarationDir": "./decl",
-    "baseUrl": ".",
+    "baseUrl": "./src/",
+    "rootDir": "./src/",
     "emitDeclarationOnly": true
-  }
+  },
+  "exclude": ["./**/*.spec.ts"]
 }

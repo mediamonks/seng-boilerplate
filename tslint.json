@@ -1,24 +1,43 @@
 {
-  "extends": [
-    "tslint-config-airbnb",
-    "tslint-config-prettier"
-  ],
+  "extends": ["tslint-config-airbnb", "tslint-config-prettier"],
   "defaultSeverity": "error",
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
-    "no-debugger": 2,
-    "no-console": 1,
+    "no-debugger": true,
+    "no-console": true,
     "prefer-array-literal": [true, { "allow-type-parameters": true }],
-    "variable-name": [
-      true,
-      "ban-keywords",
-      "check-format",
-      "allow-pascal-case",
-      "allow-leading-underscore"
-    ],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
     "max-line-length": false,
     "no-increment-decrement": false,
     "strict-boolean-expressions": false,
     "import-name": [false, {}],
-    "no-parameter-properties": true
+    "no-parameter-properties": true,
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "groups": [
+          {
+            "name": "parent directories",
+            "match": "^\\.\\.?[/]",
+            "order": 30
+          },
+          {
+            "name": "libraries",
+            "match": ".*",
+            "order": 10
+          }
+        ],
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-first"
+      }
+    ],
+    "prettier": true
+  },
+  "jsRules": {
+    "no-empty": true
+  },
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
   }
 }
