@@ -3,8 +3,6 @@
 Add a description here...
 
 [![Travis](https://img.shields.io/travis/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-boilerplate)
-[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-boilerplate)
-[![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-boilerplate.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-boilerplate?branch=master)
 [![npm](https://img.shields.io/npm/v/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 [![npm](https://img.shields.io/npm/dm/seng-boilerplate.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-boilerplate)
 
@@ -152,24 +150,15 @@ of multiple sections.
 
 1.  Defines the `node_js` [language](https://docs.travis-ci.com/user/languages/javascript-with-nodejs),
     and tells travis on which node versions to run the process.
-2.  Before running, it needs to install some global dependencies, and
-    when it processes some coverage results.
-3.  It can do a [npm deploy](https://docs.travis-ci.com/user/deployment/npm),
+2.  It can do a [npm deploy](https://docs.travis-ci.com/user/deployment/npm),
     telling it to keep the generated artifacts and only publish when run
-    on node 8 and when a tag was committed. It also contains the email
+    on node stable and when a tag was committed. It also contains the email
     address and api key of the npm user.
-4.  Code Climate has a [travis plugin](https://docs.travis-ci.com/user/code-climate/)
-    that automatically uploads the code coverage results.
 
-Because we want to keep the npm api key secret, we add the token to the Travis Repo settings
-where it will be stored secure:
-https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings
+Because we want to keep the npm api key secret, we reference an environment variable that can be
+entered in the travis settings.
 
-Before we can do this, we must make sure that the repository is added
-to Travis, because Travis needs the repository owner/name info to make
-sure the encrypted values only work for that repository.
-
-1.  Then make sure you are logged in to your npm account with the
+1.  Make sure you are logged in to your npm account with the
     [adduser](https://docs.npmjs.com/cli/adduser) command:
 
     ```sh
